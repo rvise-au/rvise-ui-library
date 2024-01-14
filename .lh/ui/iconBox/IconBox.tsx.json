@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ui/iconBox/IconBox.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704865533667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704865533667,
+            "name": "Commit-0",
+            "content": "\ntype LinkProps = {\n    href?: string;\n    target?: string;\n    rel?: string;\n    children: React.ReactNode | string;\n}\n\ntype IconBoxProps = {\n  icon?: React.ReactNode | string;\n  linkProps?: LinkProps;\n    heading?: React.ReactNode | string;\n};\nexport const IconBox = ({ icon, linkProps, heading, text, className, layout }) => {\n    \n}"
+        }
+    ]
+}

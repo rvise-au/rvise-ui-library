@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/featureBox/Box.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704865744113,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704865877907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n   heading?: React.ReactNode | string;\n   text?: React.ReactNode | string;\n   className?: string;\n   layout?: 'inline' | 'stacked' | 'beforeTitle';\n+  variant?: 'filled' | 'bordered' | 'shadowed' | 'transparent' ;\n   iconVariant?: ButtonVariant;\n   iconSize?: number;\n };\n export const FeatureBox = ({\n@@ -23,5 +24,10 @@\n   heading,\n   text,\n   className,\n   layout,\n-}: FeatureBoxProps) => {};\n+  variant = 'transparent',\n+  iconVariant = 'transparent',\n+  iconSize = 20,\n+}: FeatureBoxProps) => {\n+\n+};\n"
+                },
+                {
+                    "date": 1704865958644,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { ButtonVariant } from '@mantine/core';\n \n+\n+\n type LinkProps = {\n   href?: string;\n   target?: string;\n   rel?: string;\n@@ -27,5 +29,7 @@\n   layout,\n   variant = 'transparent',\n   iconVariant = 'transparent',\n   iconSize = 20,\n-}: FeatureBoxProps) => {};\n+}: FeatureBoxProps) => {\n+\n+};\n"
+                }
+            ],
+            "date": 1704865744113,
+            "name": "Commit-0",
+            "content": "import { ButtonVariant } from '@mantine/core';\n\ntype LinkProps = {\n  href?: string;\n  target?: string;\n  rel?: string;\n  children: React.ReactNode | string;\n};\n\ntype FeatureBoxProps = {\n  icon?: React.ReactNode | string;\n  linkProps?: LinkProps;\n  heading?: React.ReactNode | string;\n  text?: React.ReactNode | string;\n  className?: string;\n  layout?: 'inline' | 'stacked' | 'beforeTitle';\n  iconVariant?: ButtonVariant;\n  iconSize?: number;\n};\nexport const FeatureBox = ({ icon, linkProps, heading, text, className, layout }: FeatureBoxProps) => {};\n"
+        }
+    ]
+}

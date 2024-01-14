@@ -1,11 +1,22 @@
 import '@mantine/core/styles.css';
+
 import React, { useEffect } from 'react';
-import { addons } from '@storybook/preview-api';
 import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
-import { MantineProvider, useMantineColorScheme } from '@mantine/core';
+
+import { CSSVariablesResolver, MantineProvider, useMantineColorScheme } from '@mantine/core';
+import { addons } from '@storybook/preview-api';
+
 import { theme } from '../theme';
 
 const channel = addons.getChannel();
+
+const resolver: CSSVariablesResolver = (theme) => ({
+  variables: {
+    '--mantine-container-size': '1480px',
+  },
+  light: {},
+  dark: {},
+});
 
 function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
   const { setColorScheme } = useMantineColorScheme();
@@ -21,5 +32,9 @@ function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
 
 export const decorators = [
   (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
-  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,
+  (renderStory: any) => (
+    <MantineProvider theme={theme} cssVariablesResolver={resolver}>
+      {renderStory()}
+    </MantineProvider>
+  ),
 ];

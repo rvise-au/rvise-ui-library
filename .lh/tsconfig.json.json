@@ -1,0 +1,30 @@
+{
+    "sourceFile": "tsconfig.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1704790278343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704790285439,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,10 @@\n     \"paths\": {\n       \"@/*\": [\"./*\"],\n       \"@components/*\": [\"./components/*\"],\n       \"@ui/*\": [\"./ui/*\"],\n-      \"@types/*\": [\"./types/*\"]\n+      \"@types/*\": [\"./types/*\"],\n+      \"@utils/*\": [\"./utils/*\"],\n     },\n     \"plugins\": [{ \"name\": \"next\" }]\n   },\n   \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\", \".next/types/**/*.ts\"],\n"
+                },
+                {
+                    "date": 1704790507918,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,13 +15,12 @@\n     \"isolatedModules\": true,\n     \"jsx\": \"preserve\",\n     \"incremental\": true,\n     \"paths\": {\n-      \"@/*\": [\"./*\"],\n-      \"@components/*\": [\"./components/*\"],\n-      \"@ui/*\": [\"./ui/*\"],\n-      \"@types/*\": [\"./types/*\"],\n-      \"@utils/*\": [\"./utils/*\"]\n+      \"components/*\": [\"./components/*\"],\n+      \"ui/*\": [\"./ui/*\"],\n+      \"types/*\": [\"./types/*\"],\n+      \"utils/*\": [\"./utils/*\"]\n     },\n     \"plugins\": [{ \"name\": \"next\" }]\n   },\n   \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\", \".next/types/**/*.ts\"],\n"
+                },
+                {
+                    "date": 1704790900853,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     \"isolatedModules\": true,\n     \"jsx\": \"preserve\",\n     \"incremental\": true,\n     \"paths\": {\n+      \"@/*\": [\"./*\"],\n       \"components/*\": [\"./components/*\"],\n       \"ui/*\": [\"./ui/*\"],\n       \"types/*\": [\"./types/*\"],\n       \"utils/*\": [\"./utils/*\"]\n"
+                }
+            ],
+            "date": 1704790278343,
+            "name": "Commit-0",
+            "content": "{\n  \"compilerOptions\": {\n    \"types\": [\"node\", \"jest\", \"@testing-library/jest-dom\"],\n    \"target\": \"es5\",\n    \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n    \"allowJs\": true,\n    \"skipLibCheck\": true,\n    \"strict\": true,\n    \"forceConsistentCasingInFileNames\": true,\n    \"noEmit\": true,\n    \"esModuleInterop\": true,\n    \"module\": \"esnext\",\n    \"moduleResolution\": \"node\",\n    \"resolveJsonModule\": true,\n    \"isolatedModules\": true,\n    \"jsx\": \"preserve\",\n    \"incremental\": true,\n    \"paths\": {\n      \"@/*\": [\"./*\"],\n      \"@components/*\": [\"./components/*\"],\n      \"@ui/*\": [\"./ui/*\"],\n      \"@types/*\": [\"./types/*\"]\n    },\n    \"plugins\": [{ \"name\": \"next\" }]\n  },\n  \"include\": [\"next-env.d.ts\", \"**/*.ts\", \"**/*.tsx\", \".next/types/**/*.ts\"],\n  \"exclude\": [\"node_modules\"]\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "sourceFile": "ui/sections/page/split/SplitWithImage.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1705204432877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1705204551674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import cx from 'clsx';\n \n-import { TwoColumns } from '@/ui/sections/core/layouts/TwoColumns';\n+import { TwoColumns } from '@/ui/sections';\n import { IMediaBlock, ITextBlock } from '@type/index';\n import { Media } from '@ui/media/Media';\n import { SectionTitle } from '@ui/title/SectionTitle';\n import { getColumnWidth } from '@utils/get-column-width';\n"
+                },
+                {
+                    "date": 1705204564028,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import cx from 'clsx';\n \n-import { TwoColumns } from '@/ui/sections';\n import { IMediaBlock, ITextBlock } from '@type/index';\n import { Media } from '@ui/media/Media';\n+import { TwoColumns } from '@ui/sections';\n import { SectionTitle } from '@ui/title/SectionTitle';\n import { getColumnWidth } from '@utils/get-column-width';\n \n import styles from './styles/SplitWithImage.module.css';\n"
+                },
+                {
+                    "date": 1705204571205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import cx from 'clsx';\n \n import { IMediaBlock, ITextBlock } from '@type/index';\n import { Media } from '@ui/media/Media';\n-import { TwoColumns } from '@ui/sections';\n+import { TwoColumns } from '@ui/sections/core';\n import { SectionTitle } from '@ui/title/SectionTitle';\n import { getColumnWidth } from '@utils/get-column-width';\n \n import styles from './styles/SplitWithImage.module.css';\n"
+                },
+                {
+                    "date": 1705205979952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,8 +26,11 @@\n   textBlock,\n   mediaBlock,\n   columns,\n }: SplitWithImageProps) => {\n+    if (!textBlock && !mediaBlock) {\n+      return null;\n+    }\n   const _textElement = <SectionTitle {...textBlock} />;\n   const _mediaElement = <Media {...mediaBlock} />;\n   return (\n     <TwoColumns\n"
+                }
+            ],
+            "date": 1705204432877,
+            "name": "Commit-0",
+            "content": "import cx from 'clsx';\n\nimport { TwoColumns } from '@/ui/sections/core/layouts/TwoColumns';\nimport { IMediaBlock, ITextBlock } from '@type/index';\nimport { Media } from '@ui/media/Media';\nimport { SectionTitle } from '@ui/title/SectionTitle';\nimport { getColumnWidth } from '@utils/get-column-width';\n\nimport styles from './styles/SplitWithImage.module.css';\n\ntype SplitWithImageProps = {\n  isOffset?: boolean;\n  isFull?: boolean;\n  isAngled?: boolean;\n  isReverse?: boolean;\n  textBlock: ITextBlock;\n  mediaBlock: IMediaBlock;\n  columns: number[];\n};\n\nexport const SplitWithImage = ({\n  isOffset,\n  isFull,\n  isAngled,\n  isReverse = false,\n  textBlock,\n  mediaBlock,\n  columns,\n}: SplitWithImageProps) => {\n  const _textElement = <SectionTitle {...textBlock} />;\n  const _mediaElement = <Media {...mediaBlock} />;\n  return (\n    <TwoColumns\n      columns={columns}\n      className={cx(isFull && styles.full, isOffset && styles.offset, isAngled && styles.angled)}\n      style={{\n        minHeight: '820px',\n        '--media-col': isReverse\n          ? `${getColumnWidth(columns?.[0])}vw`\n          : `${getColumnWidth(columns?.[1])}vw`,\n      }}\n      left={\n        <div\n          className={cx(styles.left, isReverse ? styles.media : styles.text)}\n          data-reverse={isReverse}\n        >\n          {isReverse ? _mediaElement : _textElement}\n        </div>\n      }\n      right={\n        <div\n          className={cx(styles.right, !isReverse ? styles.media : styles.text)}\n          data-reverse={isReverse}\n        >\n          {isReverse ? _textElement : _mediaElement}\n        </div>\n      }\n    />\n  );\n};\n\nSplitWithImage.displayName = 'SplitWithImage';\n"
+        }
+    ]
+}

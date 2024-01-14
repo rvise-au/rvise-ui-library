@@ -1,0 +1,30 @@
+{
+    "sourceFile": "types/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1704789947171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704790031049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,4 +11,12 @@\n   text: string;\n   size?: MantineSize;\n   color?: MantineColor;\n };\n+\n+\n+export interface ITextBlock {\n+        heading: TitleObject;\n+        subheading: TextObject;\n+        children: React.ReactNode;\n+        width: 'xs' | 'sm' | 'md' | 'lg' | 'full';\n+    }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704790039531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n   color?: MantineColor;\n };\n \n export interface ITextBlock {\n+  label: TextObject;\n   heading: TitleObject;\n   subheading: TextObject;\n   children: React.ReactNode;\n   width: 'xs' | 'sm' | 'md' | 'lg' | 'full';\n"
+                },
+                {
+                    "date": 1704790068033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,14 @@\n   color?: MantineColor;\n };\n \n export interface ITextBlock {\n-  label: TextObject;\n-  heading: TitleObject;\n-  subheading: TextObject;\n-  children: React.ReactNode;\n-  width: 'xs' | 'sm' | 'md' | 'lg' | 'full';\n+  direction?: 'horizontal' | 'vertical';\n+  slotBefore?: React.ReactNode;\n+  slotAfter?: React.ReactNode;\n+  alignment: 'left' | 'center' | 'right';\n+  children?: React.ReactNode;\n+  label?: TextObject | React.ReactNode;\n+  heading: TitleObject | React.ReactNode;\n+  subheading?: TextObject | React.ReactNode;\n+  width?: 'xs' | 'sm' | 'md' | 'lg' | 'full';\n }\n"
+                }
+            ],
+            "date": 1704789947171,
+            "name": "Commit-0",
+            "content": "import { MantineColor, MantineSize, TitleOrder, TitleSize } from '@mantine/core';\n\nexport type TitleObject = {\n  text: string;\n  size?: TitleSize;\n  order?: TitleOrder;\n  color?: MantineColor;\n};\n\nexport type TextObject = {\n  text: string;\n  size?: MantineSize;\n  color?: MantineColor;\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "utils/get-base64-from-url.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704793516965,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704793580489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-const getBase64FromUrl = async (url) => {\n+export const getBase64FromUrl = async (url) => {\n   const data = await fetch(url);\n   const blob = await data.blob();\n   return new Promise((resolve) => {\n     const reader = new FileReader();\n@@ -10,5 +10,4 @@\n     };\n   });\n };\n \n-export default getBase64FromUrl;\n"
+                },
+                {
+                    "date": 1704794261289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-export const getBase64FromUrl = async (url) => {\n+export const getBase64FromUrl = async (url: string) => {\n   const data = await fetch(url);\n   const blob = await data.blob();\n   return new Promise((resolve) => {\n     const reader = new FileReader();\n"
+                }
+            ],
+            "date": 1704793516965,
+            "name": "Commit-0",
+            "content": "const getBase64FromUrl = async (url) => {\n  const data = await fetch(url);\n  const blob = await data.blob();\n  return new Promise((resolve) => {\n    const reader = new FileReader();\n    reader.readAsDataURL(blob);\n    reader.onloadend = () => {\n      const base64data = reader.result;\n      resolve(base64data);\n    };\n  });\n};\n\nexport default getBase64FromUrl;\n"
+        }
+    ]
+}

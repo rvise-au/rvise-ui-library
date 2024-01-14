@@ -1,0 +1,30 @@
+{
+    "sourceFile": "ui/featureBox/stories/FeatureBox.story.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1704865928636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704867640048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,52 @@\n+import { TbCookie, TbGauge, TbLock, TbMessage2, TbUser } from 'react-icons/tb';\n+\n+import { FeatureBox } from '../Box';\n+\n export default {\n   title: 'Feature Box',\n };\n+\n+export const MOCKDATA = [\n+  {\n+    icon: TbGauge,\n+    title: 'Extreme performance',\n+    description:\n+      'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',\n+  },\n+  {\n+    icon: TbUser,\n+    title: 'Privacy focused',\n+    description:\n+      'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',\n+  },\n+  {\n+    icon: TbCookie,\n+    title: 'No third parties',\n+    description:\n+      'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',\n+  },\n+  {\n+    icon: TbLock,\n+    title: 'Secure by default',\n+    description:\n+      'Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right',\n+  },\n+  {\n+    icon: TbMessage2,\n+    title: '24/7 Support',\n+    description:\n+      'Rapidash usually can be seen casually cantering in the fields and plains, Skitty is known to chase around after its own tail',\n+  },\n+];\n+\n+\n+\n+export const Basic = () => (\n+  <div style={{\n+    maxWidth: '480px',\n+    margin: '0 auto',\n+  }}>\n+    <FeatureBox />\n+  </div>\n+);\n+\n"
+                },
+                {
+                    "date": 1704867665169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,7 +45,9 @@\n       maxWidth: '480px',\n       margin: '0 auto',\n     }}\n   >\n-    <FeatureBox />\n+    {MOCKDATA.map((feature, index) => (\n+      <FeatureBox {...feature} key={index} />\n+    ))}\n   </div>\n );\n"
+                },
+                {
+                    "date": 1704867674601,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n export default {\n   title: 'Feature Box',\n };\n \n-export const MOCKDATA = [\n+\\ const MOCKDATA = [\n   {\n     icon: TbGauge,\n     title: 'Extreme performance',\n     description:\n"
+                }
+            ],
+            "date": 1704865928636,
+            "name": "Commit-0",
+            "content": "\nexport default {\n  title: 'Feature Box',\n};\n"
+        }
+    ]
+}

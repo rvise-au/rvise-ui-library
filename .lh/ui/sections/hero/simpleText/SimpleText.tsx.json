@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/sections/hero/simpleText/SimpleText.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704778825077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704779131618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,17 @@\n import cx from 'clsx';\n \n import { Flex } from '@mantine/core';\n \n+import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n import styles from './SimpleText.module.css';\n \n-export const SimpleText = ({ textBlock, alignment }) => (\n-  <Flex className={cx('SimpleText', styles.root)}>\n+export const SimpleText = ({ textBlock, alignment = 'left/center' }) => (\n+  <Flex\n+    className={cx('SimpleText', styles.root)}\n+    justify={getFlexPosition(alignment)[0]}\n+    align={getFlexPosition(alignment)[1]}\n+  >\n     <SectionTitle {...textBlock} alignment={alignment} />\n   </Flex>\n );\n"
+                },
+                {
+                    "date": 1704779139798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n import styles from './SimpleText.module.css';\n \n-export const SimpleText = ({ textBlock, alignment = 'left/center' }) => (\n+export const SimpleText = ({ textBlock, alignment = 'center/center' }) => (\n   <Flex\n     className={cx('SimpleText', styles.root)}\n     justify={getFlexPosition(alignment)[0]}\n     align={getFlexPosition(alignment)[1]}\n"
+                }
+            ],
+            "date": 1704778825077,
+            "name": "Commit-0",
+            "content": "import cx from 'clsx';\n\nimport { Flex } from '@mantine/core';\n\nimport { SectionTitle } from '../../../title/SectionTitle';\nimport styles from './SimpleText.module.css';\n\nexport const SimpleText = ({ textBlock, alignment }) => (\n    <Flex className={cx('SimpleText', styles.root, )}>\n        <SectionTitle {...textBlock} alignment={alignment} />\n    </Flex>\n)\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/sections/hero/split/SplitWithImage.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704710652733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704710747667,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-export const SplitWithImage = () => <div>SplitWithImage</div>;\n+import styles from './styles/splitWithImage.module.scss';\n+\n+export const SplitWithImage = () => <div className={styles.root}>SplitWithImage</div>;\n"
+                },
+                {
+                    "date": 1704710775300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-import styles from './styles/splitWithImage.module.scss';\n+import styles from './styles/SplitWithImage.module.scss';\n \n export const SplitWithImage = () => <div className={styles.root}>SplitWithImage</div>;\n"
+                }
+            ],
+            "date": 1704710652732,
+            "name": "Commit-0",
+            "content": "export const SplitWithImage = () => (\n    <div>SplitWithImage</div>\n)"
+        }
+    ]
+}

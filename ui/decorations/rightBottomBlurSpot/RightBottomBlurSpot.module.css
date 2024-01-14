@@ -1,0 +1,21 @@
+.root {
+  filter: blur(64px);
+  overflow: hidden;
+  z-index: -10;
+  left: 0px;
+  right: 0px;
+  bottom: -20px;
+  position: absolute;
+}
+
+.spots {
+  background-image: linear-gradient(to top right, #ff80b5, #9089fc);
+  aspect-ratio: 1155/640;
+  position: relative;
+  transform: translate(-50%, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  @media (min-width: $mantine-breakpoint-sm) {
+    width: 1120px;
+    left: calc(50% + 480px);
+    opacity: 0.3;
+  }
+}

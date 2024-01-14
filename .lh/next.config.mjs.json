@@ -1,0 +1,18 @@
+{
+    "sourceFile": "next.config.mjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704860415443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704860415443,
+            "name": "Commit-0",
+            "content": "import bundleAnalyzer from '@next/bundle-analyzer';\n\nconst withBundleAnalyzer = bundleAnalyzer({\n  enabled: process.env.ANALYZE === 'true',\n});\n\nexport default withBundleAnalyzer({\n  reactStrictMode: false,\n  typescript: {\n    // Set this to false if you want production builds to abort if there's type errors\n    ignoreBuildErrors: true,\n  },\n  eslint: {\n    /// Set this to false if you want production builds to abort if there's lint errors\n    ignoreDuringBuilds: true,\n  },\n  experimental: {\n    optimizePackageImports: ['@mantine/core', '@mantine/hooks'],\n  },\n});\n"
+        }
+    ]
+}

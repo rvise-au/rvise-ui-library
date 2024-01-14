@@ -1,0 +1,22 @@
+{
+    "sourceFile": "ui/sections/stories/mock.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1705204780027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1705204812443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { TbCookie, TbGauge, TbLock, TbUser } from 'react-icons/tb';\n \n+import { ButtonGroup } from '../../buttons/Group';\n+\n export const featuresMock = [\n   {\n     icon: TbGauge,\n     heading: {\n@@ -54,8 +56,23 @@\n     },\n   },\n ];\n \n+export const textBlockMock = {\n+  heading: {\n+    text: 'Data to enrich your online business',\n+    size: 'h1',\n+    order: 1,\n+  },\n+  subheading: {\n+    text: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',\n+    size: 'lg',\n+  },\n+  children: <ButtonGroup />,\n+  width: 'sm',\n+};\n+\n+\n export const buttonsMock = [\n   {\n     label: 'Get Started',\n     href: '#',\n"
+                }
+            ],
+            "date": 1705204780027,
+            "name": "Commit-0",
+            "content": "import { TbCookie, TbGauge, TbLock, TbUser } from 'react-icons/tb';\n\nexport const featuresMock = [\n  {\n    icon: TbGauge,\n    heading: {\n      text: 'Extreme performance',\n      size: 'lg',\n      weight: 600,\n    },\n    text: {\n      text: 'It is said to be able to seize any prey in the ocean, this Pokémon is known as the bully of the sea',\n      size: 'sm',\n      color: 'dimmed',\n    },\n  },\n  {\n    icon: TbUser,\n    heading: {\n      text: 'Privacy focused',\n      size: 'lg',\n      weight: 600,\n    },\n    text: {\n      text: 'People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma',\n      size: 'sm',\n      color: 'dimmed',\n    },\n  },\n  {\n    icon: TbCookie,\n    heading: {\n      text: 'No third parties',\n      size: 'lg',\n      weight: 600,\n    },\n    text: {\n      text: 'They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves',\n      size: 'sm',\n      color: 'dimmed',\n    },\n  },\n  {\n    icon: TbLock,\n    heading: {\n      text: 'Secure by default',\n      size: 'lg',\n      weight: 600,\n    },\n    text: {\n      text: 'Although it still can’t fly, its jumping power is outstanding, in Alola the mushrooms on Paras don’t grow up quite right',\n      size: 'sm',\n      color: 'dimmed',\n    },\n  },\n];\n\n\nexport const buttonsMock = [\n  {\n    label: 'Get Started',\n    href: '#',\n    variant: 'filled',\n    color: 'primary',\n  },\n  {\n    label: 'Learn More',\n    href: '#',\n    variant: 'transparent',\n    color: 'black',\n  },\n];\n\nexport const mediaBlockMock = {\n  type: 'image',\n  imageProps: {\n    src: 'https://images.unsplash.com/photo-1498758536662-35b82cd15e29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2102&q=80',\n    alt: 'Image alt text',\n    quality: 85,\n    fill: true,\n  },\n};\n\nexport const mediaOffsetBlockMock = {\n  type: 'image',\n  imageProps: {\n    src: 'https://tailwindui.com/img/component-images/project-app-screenshot.png',\n    alt: 'Image alt text',\n    quality: 85,\n    width: 1340,\n    height: 820,\n  },\n};"
+        }
+    ]
+}

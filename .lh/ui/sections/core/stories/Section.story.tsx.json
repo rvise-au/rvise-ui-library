@@ -1,0 +1,34 @@
+{
+    "sourceFile": "ui/sections/core/stories/Section.story.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1704708670300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704710674464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n+import { SplitWithImage } from '../hero/split/SplitWithImage';\n import { Section } from '../Section';\n \n export default {\n   title: 'Section',\n };\n \n-export const Usage = () => <Section>Some Section Content</Section>;\n+export const Usage = () => <Section><SplitWithImage>Image</SplitWithImage></Section>;\n"
+                },
+                {
+                    "date": 1704710683499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import { SplitWithImage } from '../hero/split/SplitWithImage';\n+import { SplitWithImage } from '../../hero/split/SplitWithImage';\n import { Section } from '../Section';\n \n export default {\n   title: 'Section',\n"
+                },
+                {
+                    "date": 1704768520719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,22 @@\n export default {\n   title: 'Section',\n };\n \n+const textBlock = {\n+    heading: {\n+        text: 'Data to enrich your online business',\n+        size: 'h2',\n+        order: 2,\n+    },\n+    subheading: {\n+        text: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',\n+        size: 'md'\n+    },\n+    \n+}\n+\n export const Usage = () => (\n   <Section>\n-    <SplitWithImage />\n+    <SplitWithImage textBlock={textBlock} />\n   </Section>\n );\n"
+                },
+                {
+                    "date": 1704768551794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n \n const textBlock = {\n   heading: {\n     text: 'Data to enrich your online business',\n-    size: 'h2',\n-    order: 2,\n+    size: 'h1',\n+    order: 1,\n   },\n   subheading: {\n     text: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',\n     size: 'md',\n"
+                }
+            ],
+            "date": 1704708670300,
+            "name": "Commit-0",
+            "content": "import { Section } from '../Section';\n\nexport default {\n  title: 'Section',\n};\n\nexport const Usage = () => <Section>Some Section Content</Section>;\n"
+        }
+    ]
+}

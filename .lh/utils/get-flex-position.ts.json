@@ -1,0 +1,26 @@
+{
+    "sourceFile": "utils/get-flex-position.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704778946089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704778967448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,37 +3,30 @@\n   const [horizontal, vertical] = position.split('/');\n   let styles = {};\n   switch (horizontal) {\n     case 'left':\n-      return {\n-        justifyContent: 'flex-start',\n-      };\n+      styles = { justifyContent: 'flex-start' };\n+      break;\n     case 'center':\n-      return {\n-        justifyContent: 'center',\n-        textAlign: 'center',\n-      };\n+      styles = { justifyContent: 'center' };\n+      break;\n     case 'right':\n-      return {\n-        justifyContent: 'flex-end',\n-      };\n+      styles = { justifyContent: 'flex-end' };\n+      break;\n     default:\n-      return {};\n+      break;\n   }\n-\n-  switch (vertical) {\n-    case 'top':\n-      return {\n-        alignItems: 'flex-start',\n-      };\n-    case 'center':\n-      return {\n-        alignItems: 'center',\n-      };\n-    case 'bottom':\n-      return {\n-        alignItems: 'flex-end',\n-      };\n-    default:\n-      return {};\n-  }\n+    switch (vertical) {\n+        case 'top':\n+        styles = { ...styles, alignItems: 'flex-start' };\n+        break;\n+        case 'center':\n+        styles = { ...styles, alignItems: 'center' };\n+        break;\n+        case 'bottom':\n+        styles = { ...styles, alignItems: 'flex-end' };\n+        break;\n+        default:\n+        break;\n+    }\n+    return styles;\n };\n"
+                },
+                {
+                    "date": 1704779048488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,34 @@\n export const getFlexPosition = (position) => {\n   // position is a string like 'left/top'\n   const [horizontal, vertical] = position.split('/');\n-  let styles = {};\n-  switch (horizontal) {\n+  let styles = [];\n+switch (horizontal) {\n     case 'left':\n-      styles = { justifyContent: 'flex-start' };\n-      break;\n+        styles.push(' flex-start');\n+        break;\n     case 'center':\n-      styles = { justifyContent: 'center' };\n-      break;\n+        styles.push('center');\n+        break;\n     case 'right':\n-      styles = { justifyContent: 'flex-end' };\n-      break;\n+        styles.push('flex-end');\n+        break;\n     default:\n-      break;\n-  }\n-  switch (vertical) {\n+        break;\n+\n+}\n+switch (vertical) {\n     case 'top':\n-      styles = { ...styles, alignItems: 'flex-start' };\n-      break;\n+        styles.push('flex-start');\n+        break;\n     case 'center':\n-      styles = { ...styles, alignItems: 'center' };\n-      break;\n+        styles.push('center');\n+        break;\n     case 'bottom':\n-      styles = { ...styles, alignItems: 'flex-end' };\n-      break;\n+        styles.push('flex-end');\n+        break;\n     default:\n-      break;\n-  }\n-  return styles;\n+        break;\n+\n+}\n+  return styles.join(' ');\n };\n"
+                }
+            ],
+            "date": 1704778946089,
+            "name": "Commit-0",
+            "content": "export const getFlexPosition = (position) => {\n    // position is a string like 'left/top'\n    const [horizontal, vertical] = position.split('/');\n    let     styles              = {};\n    switch (horizontal) {\n        case 'left':\n            return {\n                justifyContent: 'flex-start',\n            };\n        case 'center':\n            return {\n                justifyContent: 'center',\n                textAlign: 'center',\n            };\n        case 'right':\n            return {\n                justifyContent: 'flex-end',\n            };\n        default:\n            return {};\n    }\n\n    switch (vertical) {\n        case 'top':\n            return {\n                alignItems: 'flex-start',\n            };\n        case 'center':\n            return {\n                alignItems: 'center',\n            };\n        case 'bottom':\n            return {\n                alignItems: 'flex-end',\n            };\n        default:\n            return {};\n    }\n\n}"
+        }
+    ]
+}

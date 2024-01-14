@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/title/SectionTitle.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704766762231,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704766974773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n+import { Title, TitleOrder, TitleSize } from '@mantine/core';\n+\n+import styles from './styles/SectionTitle.module.css';\n+\n+type TitleObject = {\n+  text: string;\n+  size: TitleSize;\n+  order: TitleOrder;\n+};\n+\n type SectionTitleProps = {\n   direction: 'horizontal' | 'vertical';\n   slotBefore?: React.ReactNode;\n   slotAfter?: React.ReactNode;\n@@ -7,9 +17,9 @@\n   renderTitle?: () => React.ReactNode;\n   renderLabel?: () => React.ReactNode;\n   contrastColor: string;\n   label: string | React.ReactNode;\n-  heading: string | React.ReactNode;\n+  heading: TitleObject | React.ReactNode;\n   subheading: string | React.ReactNode;\n   buttons: React.ReactNode;\n };\n \n@@ -26,6 +36,21 @@\n   heading,\n   subheading,\n   buttons,\n }: SectionTitleProps) => {\n-  return <div>SectionTitle</div>;\n+\n+    const HeadingElement = heading?.text && (\n+      <Title\n+        className={styles.title}\n+        order={Number(title?.tag || 1) as TitleOrder}\n+        weight=\"bolder\"\n+        color={title?.color}\n+        size={title?.size || 'h1'}\n+      >\n+        {parseTextColor(title?.text, theme)}\n+      </Title>\n+    );\n+\n+    return (\n+        <div><HeadingElement /></div>\n+    );\n };\n"
+                },
+                {
+                    "date": 1704767052985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import { isValidElement } from 'react';\n+\n import { Title, TitleOrder, TitleSize } from '@mantine/core';\n \n import styles from './styles/SectionTitle.module.css';\n \n@@ -36,19 +38,22 @@\n   heading,\n   subheading,\n   buttons,\n }: SectionTitleProps) => {\n-  const HeadingElement = heading?.text && (\n-    <Title\n-      className={styles.title}\n-      order={Number(title?.tag || 1) as TitleOrder}\n-      weight=\"bolder\"\n-      color={title?.color}\n-      size={title?.size || 'h1'}\n-    >\n-      {parseTextColor(title?.text, theme)}\n-    </Title>\n-  );\n+  const HeadingElement =\n+    !isValidElement(heading) && heading?.text ? (\n+      <Title\n+        className={styles.title}\n+        order={Number(title?.tag || 1) as TitleOrder}\n+        weight=\"bolder\"\n+        color={title?.color}\n+        size={title?.size || 'h1'}\n+      >\n+        {parseTextColor(title?.text, theme)}\n+      </Title>\n+    ) : (\n+      heading\n+    );\n \n   return (\n     <div>\n       <HeadingElement />\n"
+                }
+            ],
+            "date": 1704766762231,
+            "name": "Commit-0",
+            "content": "\n\ntype SectionTitleProps = {\n  direction: 'horizontal' | 'vertical';\n  slotBefore?: React.ReactNode;\n  slotAfter?: React.ReactNode;\n  alignment: 'left' | 'center' | 'right';\n  children: React.ReactNode;\n  renderTitle?: () => React.ReactNode;\n  renderLabel?: () => React.ReactNode;\n  contrastColor: string;\n  label: string | React.ReactNode;\n  heading: string | React.ReactNode;\n  subheading: string | React.ReactNode;\n  buttons: React.ReactNode;\n};\n\nexport const SectionTitle = ({\n  direction,\n  slotBefore,\n  slotAfter,\n  alignment,\n  children,\n  renderTitle,\n  renderLabel,\n  contrastColor,\n  label,\n  heading,\n  subheading,\n  buttons,\n}: SectionTitleProps) => {\n\n    return (\n        <div>SectionTitle</div>\n    );\n};\n"
+        }
+    ]
+}

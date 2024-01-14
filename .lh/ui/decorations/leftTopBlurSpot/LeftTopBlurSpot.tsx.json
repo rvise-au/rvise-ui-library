@@ -1,0 +1,42 @@
+{
+    "sourceFile": "ui/decorations/leftTopBlurSpot/LeftTopBlurSpot.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1704791426789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704791441162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n+import styles from './LeftTopBlurSpot.module.css';\n+\n export const LeftTopBlurSpot = ({ className }) => (\n-  <div className=\"root\">\n+  <div className={styles.root}>\n     <div\n-      className=\"spots\"\n+      className={styles.spots}\n       style={{\n         clipPath:\n           'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',\n       }}\n"
+                },
+                {
+                    "date": 1704791463948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n+import cx from 'clsx';\n+\n import styles from './LeftTopBlurSpot.module.css';\n \n export const LeftTopBlurSpot = ({ className }) => (\n-  <div className={styles.root}>\n+  <div className={cx(styles.root, className)}>\n     <div\n       className={styles.spots}\n       style={{\n         clipPath:\n"
+                },
+                {
+                    "date": 1704791517838,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,4 @@\n-\n-\n import cx from 'clsx';\n \n import styles from './LeftTopBlurSpot.module.css';\n \n"
+                },
+                {
+                    "date": 1704791598391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n   <div className={cx(styles.root, className)}>\n     <div\n       className={styles.spots}\n       style={{\n+        '  --spot-blur': 'blur(64px)',\n         clipPath:\n           'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',\n       }}\n     />\n"
+                },
+                {
+                    "date": 1704791671270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n   <div className={cx(styles.root, className)}>\n     <div\n       className={styles.spots}\n       style={{\n-        '--spot-blur': 'blur(64px)',\n         clipPath:\n           'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',\n       }}\n     />\n"
+                },
+                {
+                    "date": 1704860341264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import cx from 'clsx';\n \n import styles from './LeftTopBlurSpot.module.css';\n \n-export const LeftTopBlurSpot = ({ className }) => (\n+export const LeftTopBlurSpot = ({ className: string }) => (\n   <div className={cx(styles.root, className)}>\n     <div\n       className={styles.spots}\n       style={{\n"
+                }
+            ],
+            "date": 1704791426789,
+            "name": "Commit-0",
+            "content": "\n\nexport const LeftTopBlurSpot = ({ className }) => (\n  <div className=\"root\">\n    <div\n      className=\"spots\"\n      style={{\n        clipPath:\n          'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',\n      }}\n    />\n  </div>\n);\n"
+        }
+    ]
+}

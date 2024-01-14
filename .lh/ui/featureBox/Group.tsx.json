@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/featureBox/Group.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704887950798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704887962382,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import cx from 'clsx';\n \n import styles from './Group.module.css';\n \n-export const IconBoxGroup = ({ children, className, spacing, cols }) => (\n+export const FeaturedBoxGroup = ({ children, className, spacing, cols }) => (\n   <SimpleGrid\n     className={cx(styles.root, className)}\n     cols={cols || { base: 1, xs: 2 }}\n     spacing={spacing || 24}\n"
+                },
+                {
+                    "date": 1704888392922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,13 +2,14 @@\n import cx from 'clsx';\n \n import styles from './Group.module.css';\n \n-export const FeaturedBoxGroup = ({ children, className, spacing, cols }) => (\n+export const FeaturedBoxGroup = ({ children, className, spacing, cols, verticalSpacing }) => (\n   <SimpleGrid\n     className={cx(styles.root, className)}\n     cols={cols || { base: 1, xs: 2 }}\n     spacing={spacing || 24}\n+    verticalSpacing={verticalSpacing || 24}\n   >\n     {children}\n   </SimpleGrid>\n );\n"
+                }
+            ],
+            "date": 1704887950798,
+            "name": "Commit-0",
+            "content": "import { SimpleGrid } from '@mantine/core';\nimport cx from 'clsx';\n\nimport styles from './Group.module.css';\n\nexport const IconBoxGroup = ({ children, className, spacing, cols }) => (\n  <SimpleGrid className={cx(styles.root, className)} cols={cols || { base: 1, xs: 2 }} spacing={spacing || 24}>\n    {children}\n  </SimpleGrid>\n);\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/decorations/rightBottomBlurSpot/RightTopBlurSpot.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704792384093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704792398616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n   position: relative;\n   transform: translate(-50%, 0) rotate(30deg) skewX(0) skewY(0) scaleX(1) scaleY(1);\n   @media (min-width: $mantine-breakpoint-sm) {\n     width: 1120px;\n-    left: calc(50% - 30rem);\n+    left: calc(50% - 35rem);\n     opacity: 0.3;\n   }\n }\n"
+                },
+                {
+                    "date": 1704792408483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   overflow: hidden;\n   z-index: -10;\n   left: 0px;\n   right: 0px;\n-top: calc(100% - 30rem);\n+  top: calc(100% - 320px);\n   position: absolute;\n }\n \n .spots {\n"
+                }
+            ],
+            "date": 1704792384093,
+            "name": "Commit-0",
+            "content": ".root {\n  filter: blur(64px);\n  overflow: hidden;\n  z-index: -10;\n  left: 0px;\n  right: 0px;\ntop: calc(100% - 30rem);\n  position: absolute;\n}\n\n.spots {\n  background-image: linear-gradient(to top right, #ff80b5, #9089fc);\n  aspect-ratio: 1155/640;\n  position: relative;\n  transform: translate(-50%, 0) rotate(30deg) skewX(0) skewY(0) scaleX(1) scaleY(1);\n  @media (min-width: $mantine-breakpoint-sm) {\n    width: 1120px;\n    left: calc(50% - 30rem);\n    opacity: 0.3;\n  }\n}\n"
+        }
+    ]
+}

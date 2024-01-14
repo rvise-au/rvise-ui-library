@@ -1,0 +1,38 @@
+{
+    "sourceFile": "ui/buttons/Group.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1704777062618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704777141329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Button, Group } from '@mantine/core';\n \n export const ButtonGroup = () => (\n   <Group>\n-    <Button variant=\"default\">First</Button>\n+    <Button variant=\"filled\">First</Button>\n     <Button variant=\"default\">Second</Button>\n   </Group>\n );\n"
+                },
+                {
+                    "date": 1704777146785,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Button, Group } from '@mantine/core';\n \n export const ButtonGroup = () => (\n   <Group>\n-    <Button variant=\"filled\">First</Button>\n+    <Button variant=\"filled\">Get in touch</Button>\n     <Button variant=\"default\">Second</Button>\n   </Group>\n );\n"
+                },
+                {
+                    "date": 1704777216315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Button, Group } from '@mantine/core';\n \n export const ButtonGroup = () => (\n   <Group>\n-    <Button variant=\"filled\">Get in touch</Button>\n+    <Button variant=\"filled\" color='primary'>Get in touch</Button>\n     <Button variant=\"default\">Second</Button>\n   </Group>\n );\n"
+                },
+                {
+                    "date": 1704777259963,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   <Group>\n     <Button variant=\"filled\" color=\"primary\">\n       Get in touch\n     </Button>\n-    <Button variant=\"default\">Second</Button>\n+    <Button variant=\"transparent\" color=\"dark\">Second</Button>\n   </Group>\n );\n"
+                },
+                {
+                    "date": 1704777448217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { Button, Group } from '@mantine/core';\n \n export const ButtonGroup = () => (\n-  <Group>\n+  <Group className='buttonGroup'>\n     <Button variant=\"filled\" color=\"primary\">\n       Get in touch\n     </Button>\n     <Button variant=\"transparent\" color=\"dark\">\n"
+                }
+            ],
+            "date": 1704777062618,
+            "name": "Commit-0",
+            "content": "import { Button, Group } from '@mantine/core';\n\nexport const ButtonGroup = () => (\n  <Group>\n    <Button variant=\"default\">First</Button>\n    <Button variant=\"default\">Second</Button>\n  </Group>\n);"
+        }
+    ]
+}

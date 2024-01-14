@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ui/iconBox/Group.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704865181569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704865181569,
+            "name": "Commit-0",
+            "content": "export const IconBoxGroup = ({ iconBoxGroup, className }) => {\n    \n}"
+        }
+    ]
+}

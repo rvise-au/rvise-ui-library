@@ -1,0 +1,9 @@
+.root {
+  margin: var(--features-group-margin-sm);
+  @media ($mantine-breakpoint-sm) {
+    margin: var(--features-group-margin-md);
+  }
+  @media (min-width: $mantine-breakpoint-md) {
+    margin: var(--features-group-margin-lg);
+  }
+}

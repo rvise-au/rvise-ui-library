@@ -1,0 +1,18 @@
+{
+    "sourceFile": "utils/get-column-width.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704967837181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704967837181,
+            "name": "Commit-0",
+            "content": "export const getColumnWidth = (col: number) => {\n  switch (col) {\n    case 5:\n      return 46;\n    case 6:\n      return 50;\n    case 7:\n      return 57;\n    case 8:\n      return 66;\n    default:\n      return 50;\n  }\n};\n"
+        }
+    ]
+}

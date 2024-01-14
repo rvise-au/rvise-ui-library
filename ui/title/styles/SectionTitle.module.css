@@ -1,0 +1,30 @@
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .buttonGroup {
+    margin-top: 0.5rem;
+  }
+
+  &[data-alignment='center'] {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.width_xs {
+  max-width: 480px;
+}
+
+.width_sm {
+  max-width: 680px;
+}
+
+.width_md {
+  max-width: 940px;
+}
+
+.width_lg {
+  max-width: 1120px;
+}

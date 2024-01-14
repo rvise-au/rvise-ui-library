@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/title/styles/SectionTitle.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704772286755,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704772292346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n .inner {\n   display: flex;\n   flex-direction: column;\n-  gap: 2rem;\n+  gap: 1.5rem;\n }\n"
+                },
+                {
+                    "date": 1704777466745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,11 @@\n .inner {\n   display: flex;\n   flex-direction: column;\n   gap: 1.5rem;\n+\n+  .buttonGroup {\n+    margin-top: 0.5rem;\n+  }\n }\n+\n+\n"
+                }
+            ],
+            "date": 1704772286755,
+            "name": "Commit-0",
+            "content": ".inner {\n    display: flex;\n    flex-direction: column;\n    gap: 1rem;\n}"
+        }
+    ]
+}

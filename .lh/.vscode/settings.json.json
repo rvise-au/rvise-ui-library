@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".vscode/settings.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704790879648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704790983980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,19 @@\n {\n   \"importSorter.generalConfiguration.sortOnBeforeSave\": true,\n   \"importSorter.sortConfiguration.customOrderingRules.rules\": [\n     {\n-      \"type\": \"importMember\",\n-      \"regex\": \"^$\",\n+      \"regex\": \"^@mantine|^react|^react-player\",\n       \"orderLevel\": 5\n     },\n     {\n-      \"regex\": \"^[^.@]\",\n-      \"orderLevel\": 10\n+      \"type\": \"importMember\",\n+      \"regex\": \"^!.$\",\n+      \"orderLevel\": 5\n     },\n     {\n       \"regex\": \"^[@]\",\n-      \"orderLevel\": 15\n+      \"orderLevel\": 10\n     },\n     {\n       \"regex\": \"^[.]\",\n       \"orderLevel\": 30\n"
+                },
+                {
+                    "date": 1704790997972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n {\n   \"importSorter.generalConfiguration.sortOnBeforeSave\": true,\n   \"importSorter.sortConfiguration.customOrderingRules.rules\": [\n     {\n-      \"regex\": \"^@mantine|^react|^react-player\",\n+      \"regex\": \"^clsx|^@mantine|^react|^react-player\",\n       \"orderLevel\": 5\n     },\n     {\n       \"type\": \"importMember\",\n"
+                }
+            ],
+            "date": 1704790879648,
+            "name": "Commit-0",
+            "content": "{\n    \"importSorter.generalConfiguration.sortOnBeforeSave\": true,\n    \"importSorter.sortConfiguration.customOrderingRules.rules\": [\n      {\n        \"type\": \"importMember\",\n        \"regex\": \"^$\",\n        \"orderLevel\": 5\n      },\n      {\n        \"regex\": \"^[^.@]\",\n        \"orderLevel\": 10\n      },\n      {\n        \"regex\": \"^[@]\",\n        \"orderLevel\": 15\n      },\n      {\n        \"regex\": \"^[.]\",\n        \"orderLevel\": 30\n      }\n    ]\n}"
+        }
+    ]
+}

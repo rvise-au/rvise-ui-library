@@ -1,0 +1,53 @@
+.root {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 2rem;
+}
+
+.col_1 {
+  grid-column: span 1 / span 1;
+}
+
+.col_2 {
+  grid-column: span 2 / span 2;
+}
+
+.col_3 {
+  grid-column: span 3 / span 3;
+}
+
+.col_4 {
+  grid-column: span 4 / span 4;
+}
+
+.col_5 {
+  grid-column: span 5 / span 5;
+}
+
+.col_6 {
+  grid-column: span 6 / span 6;
+}
+
+.col_7 {
+  grid-column: span 7 / span 7;
+}
+
+.col_8 {
+  grid-column: span 8 / span 8;
+}
+
+.col_9 {
+  grid-column: span 9 / span 9;
+}
+
+.col_10 {
+  grid-column: span 10 / span 10;
+}
+
+.col_11 {
+  grid-column: span 11 / span 11;
+}
+
+.col_12 {
+  grid-column: span 12 / span 12;
+}

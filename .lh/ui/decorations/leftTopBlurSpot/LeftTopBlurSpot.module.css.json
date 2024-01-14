@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/decorations/leftTopBlurSpot/LeftTopBlurSpot.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704791558961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704791719662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,8 @@\n .root {\n-  blur: 64px;\n+  fitler: blur(64px);\n+  overflow: hidden;\n+  z-index: -10;\n+      left: 0px;\n+    right: 0px;\n+    position: absolute;\n }\n"
+                },
+                {
+                    "date": 1704791790284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,4 +5,10 @@\n   left: 0px;\n   right: 0px;\n   position: absolute;\n }\n+\n+.spots {\n+    @media (min-width: $mantine-breakpoint-sm) {\n+            width: 1120px;\n+    }\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1704791558961,
+            "name": "Commit-0",
+            "content": ".root {\n    blur: 64px\n}"
+        }
+    ]
+}

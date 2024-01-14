@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".storybook/main.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704708707268,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704968869359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,7 +13,15 @@\n   framework: {\n     name: '@storybook/nextjs',\n     options: {},\n   },\n+  webpackFinal: async (config) => {\n+    config.resolve.alias = {\n+      ...config.resolve.alias,\n+      '@/interfaces': path.resolve(__dirname, '../interfaces'),\n+    };\n+\n+    return config;\n+  },\n };\n \n export default config;\n"
+                },
+                {
+                    "date": 1704968912717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import type { StorybookConfig } from '@storybook/nextjs';\n+const path = require('path');\n \n const config: StorybookConfig = {\n   stories: [\n     '../components/**/*.(stories|story).@(js|jsx|ts|tsx)',\n@@ -16,9 +17,13 @@\n   },\n   webpackFinal: async (config) => {\n     config.resolve.alias = {\n       ...config.resolve.alias,\n-      '@/interfaces': path.resolve(__dirname, '../interfaces'),\n+      '@ui': path.resolve(__dirname, '../ui'),\n+      '@components': path.resolve(__dirname, '../components'),\n+      '@utils': path.resolve(__dirname, '../utils'),\n+      '@hooks': path.resolve(__dirname, '../hooks'),\n+      '@type': path.resolve(__dirname, '../types'),\n     };\n \n     return config;\n   },\n"
+                }
+            ],
+            "date": 1704708707268,
+            "name": "Commit-0",
+            "content": "import type { StorybookConfig } from '@storybook/nextjs';\n\nconst config: StorybookConfig = {\n  stories: [\n    '../components/**/*.(stories|story).@(js|jsx|ts|tsx)',\n    '../ui/**/*.(stories|story).@(js|jsx|ts|tsx)',\n  ],\n  addons: [\n    '@storybook/addon-essentials',\n    'storybook-dark-mode',\n    '@storybook/addon-styling-webpack',\n  ],\n  framework: {\n    name: '@storybook/nextjs',\n    options: {},\n  },\n};\n\nexport default config;\n"
+        }
+    ]
+}

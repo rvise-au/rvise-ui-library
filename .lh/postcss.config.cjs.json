@@ -1,0 +1,18 @@
+{
+    "sourceFile": "postcss.config.cjs",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704777620451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704777620451,
+            "name": "Commit-0",
+            "content": "module.exports = {\n  plugins: {\n    'postcss-preset-mantine': {},\n    'postcss-nesting': {},\n    'postcss-simple-vars': {\n      variables: {\n        'mantine-breakpoint-xs': '36em',\n        'mantine-breakpoint-sm': '48em',\n        'mantine-breakpoint-md': '62em',\n        'mantine-breakpoint-lg': '75em',\n        'mantine-breakpoint-xl': '88em',\n      },\n    },\n  },\n};\n"
+        }
+    ]
+}

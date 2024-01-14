@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ui/sections/page/simpleText/SimpleText.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1705204534059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1705204534059,
+            "name": "Commit-0",
+            "content": "import { Flex } from '@mantine/core';\nimport cx from 'clsx';\n\nimport { Alignment, ITextBlock } from '../../../../types';\nimport { getFlexPosition } from '../../../../utils/get-flex-position';\nimport { SectionTitle } from '../../../title/SectionTitle';\nimport styles from './SimpleText.module.css';\n\ntype SimpleTextProps = {\n  textBlock: ITextBlock;\n  minHeight: string;\n  alignment: Alignment;\n};\n\nexport const SimpleText = ({\n  textBlock,\n  minHeight,\n  alignment = 'center/center',\n}: SimpleTextProps) => (\n  <Flex\n    direction=\"column\"\n    className={cx('SimpleText', styles.root)}\n    justify={getFlexPosition(alignment)[1]}\n    align={getFlexPosition(alignment)[0]}\n    style={{\n      '--min-height-lg': minHeight,\n    }}\n  >\n    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0]} />\n  </Flex>\n);\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/sections/core/layouts/TwoColumns.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1705204451482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1705204585225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n-import styles from './styles/TwoColumns.module.css';\n+import styles from '../styles/TwoColumns.module.css';\n \n interface TwoColumnsProps {\n   left: React.ReactNode;\n   right: React.ReactNode;\n"
+                },
+                {
+                    "date": 1705204603882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n-import styles from '../styles/TwoColumns.module.css';\n+import styles from './TwoColumns.module.css';\n \n interface TwoColumnsProps {\n   left: React.ReactNode;\n   right: React.ReactNode;\n"
+                }
+            ],
+            "date": 1705204451482,
+            "name": "Commit-0",
+            "content": "import cx from 'clsx';\nimport { cloneElement, isValidElement } from 'react';\n\nimport styles from './styles/TwoColumns.module.css';\n\ninterface TwoColumnsProps {\n  left: React.ReactNode;\n  right: React.ReactNode;\n  columns?: number[];\n  className?: string;\n  style?: React.CSSProperties;\n  dataAttributes?: Record<string, unknown>;\n}\n\n// TwoColumns is a layout component that takes two React nodes and renders them side by side.\nexport const TwoColumns = ({\n  left,\n  right,\n  columns = [6, 6],\n  className,\n  style,\n  dataAttributes,\n}: TwoColumnsProps) => (\n  <div className={cx(styles.root, className)} style={style} {...dataAttributes}>\n    {left &&\n      isValidElement(left) &&\n      // Clone the leftColumn element and add a className to it for styling\n      cloneElement(left, {\n        className: cx(styles.leftColumn, styles[`col_${columns[0]}`], left.props?.className),\n      })}\n    {right &&\n      isValidElement(right) &&\n      // Clone the rightColumn element and add a className to it for styling\n      cloneElement(right, {\n        className: cx(styles.rightColumn, styles[`col_${columns[1]}`], right.props?.className),\n      })}\n  </div>\n);\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "ui/sections/hero/stacked/StackedWithMedia.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1704864747646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704864793014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,23 @@\n import { Flex } from '@mantine/core';\n import cx from 'clsx';\n \n-import { Alignment, ITextBlock } from '../../../../types';\n+import { Alignment, IMediaBlock, ITextBlock } from '../../../../types';\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n+import { Media } from '../../../media/Media';\n import { SectionTitle } from '../../../title/SectionTitle';\n import styles from './StackedWithMedia.module.css';\n \n type SimpleTextProps = {\n   textBlock: ITextBlock;\n   minHeight: string;\n   alignment: Alignment;\n+  mediaBlock: IMediaBlock;\n };\n \n export const StackedWithMedia = ({\n   textBlock,\n+  mediaBlock,\n   minHeight,\n   alignment = 'center/center',\n }: SimpleTextProps) => (\n   <Flex\n@@ -26,6 +29,7 @@\n       '--min-height-lg': minHeight,\n     }}\n   >\n     <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0]} />\n+    <Media {...mediaBlock} />\n   </Flex>\n );\n"
+                }
+            ],
+            "date": 1704864747646,
+            "name": "Commit-0",
+            "content": "import { Flex } from '@mantine/core';\nimport cx from 'clsx';\n\nimport { Alignment, ITextBlock } from '../../../../types';\nimport { getFlexPosition } from '../../../../utils/get-flex-position';\nimport { SectionTitle } from '../../../title/SectionTitle';\nimport styles from './StackedWithMedia.module.css';\n\ntype SimpleTextProps = {\n  textBlock: ITextBlock;\n  minHeight: string;\n  alignment: Alignment;\n};\n\nexport const StackedWithMedia = ({\n  textBlock,\n  minHeight,\n  alignment = 'center/center',\n}: SimpleTextProps) => (\n  <Flex\n    direction=\"column\"\n    className={cx('SimpleText', styles.root)}\n    justify={getFlexPosition(alignment)[1]}\n    align={getFlexPosition(alignment)[0]}\n    style={{\n      '--min-height-lg': minHeight,\n    }}\n  >\n    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0]} />\n  </Flex>\n);\n"
+        }
+    ]
+}

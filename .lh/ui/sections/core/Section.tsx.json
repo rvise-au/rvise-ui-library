@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/sections/core/Section.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704707724189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704707749461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,5 +7,11 @@\n   children,\n   renderChildren,\n   afterContent,\n   beforeContent,\n-}) => <section className={styles.root}></section>;\n+}) => (\n+  <section className={styles.root}>\n+    {beforeContent}\n+    {renderChildren ? renderChildren() : children}\n+    {afterContent}\n+  </section>\n+);\n"
+                },
+                {
+                    "date": 1704707844968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import cx from 'clsx';\n+\n import styles from './styles/section.module.css';\n \n export const Section = ({\n   id,\n@@ -8,9 +10,9 @@\n   renderChildren,\n   afterContent,\n   beforeContent,\n }) => (\n-  <section className={styles.root}>\n+  <section className={cx(styles.root, className)}>\n     {beforeContent}\n     {renderChildren ? renderChildren() : children}\n     {afterContent}\n   </section>\n"
+                }
+            ],
+            "date": 1704707724189,
+            "name": "Commit-0",
+            "content": "import styles from './styles/section.module.css';\n\nexport const Section = ({ id, className, style, children, renderChildren, afterContent, beforeContent}) => (\n  <section className={styles.root}>\n\n  </section>\n);\n"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "sourceFile": "ui/sections/core/styles/TwoColumns.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1704774496950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704774979551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,54 @@\n .root {\n   display: grid;\n   grid-template-columns: repeat(12, minmax(0, 1fr));\n   column-gap: 2rem;\n+  \n }\n+\n+.col_1 {\n+  grid-column: span 1 / span 1;\n+}\n+\n+.col_2 {\n+  grid-column: span 2 / span 2;\n+}\n+\n+.col_3 {\n+  grid-column: span 3 / span 3;\n+}\n+\n+.col_4 {\n+  grid-column: span 4 / span 4;\n+}\n+\n+.col_5 {\n+  grid-column: span 5 / span 5;\n+}\n+\n+.col_6 {\n+  grid-column: span 6 / span 6;\n+}\n+\n+.col_7 {\n+  grid-column: span 7 / span 7;\n+}\n+\n+.col_8 {\n+  grid-column: span 8 / span 8;\n+}\n+\n+.col_9 {\n+  grid-column: span 9 / span 9;\n+}\n+\n+.col_10 {\n+  grid-column: span 10 / span 10;\n+}\n+\n+.col_11 {\n+  grid-column: span 11 / span 11;\n+}\n+\n+.col_12 {\n+  grid-column: span 12 / span 12;\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1704774496950,
+            "name": "Commit-0",
+            "content": ".root {\n      display: grid;\n  grid-template-columns: repeat(12, minmax(0, 1fr));\n  column-gap: 2rem;\n}"
+        }
+    ]
+}

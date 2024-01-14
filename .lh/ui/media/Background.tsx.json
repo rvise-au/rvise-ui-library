@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/media/Background.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1704792990821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704793101512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n+'use client'\n+import { useEffect, useState } from 'react';\n+import ReactPlayer from 'react-player/lazy';\n+\n+import Image from 'next/image';\n+\n+import styles from './styles/Background.module.css';\n+\n export const Background = ({\n   type,\n   videoProps,\n   imageProps,\n@@ -6,5 +14,47 @@\n   position,\n   hasPriority,\n   style,\n   className,\n-}) => {};\n+}) => {\n+  const { autoplay, loop, muted, videoUrl, thumbnail, youtubeSrc, sourceType } = videoProps || {};\n+  const [playing, setPlaying] = useState(autoplay || false);\n+  const [mounted, setMounted] = useState(false);\n+\n+  const videoSource =\n+    sourceType === 'youtube' ? `https://www.youtube.com/watch?v=${youtubeSrc}` : videoUrl;\n+  useEffect(() => {\n+    setMounted(true);\n+  }, []);\n+  useEffect(() => {\n+    if (mounted && autoplay) setPlaying(true);\n+  }, [mounted]);\n+\n+  return (\n+    <div className={styles.root}>\n+      {type === 'video' && mounted && (\n+        <ReactPlayer\n+          light={\n+            !autoplay && thumbnail?.url ? (\n+              <Image\n+                {...thumbnail}\n+                alt={thumbnail?.altText || 'Video thumbnail'}\n+                className={styles.image}\n+                quality={85}\n+              />\n+            ) : (\n+              !autoplay\n+            )\n+          }\n+          loop\n+          playing={playing}\n+          muted\n+          width=\"100%\"\n+          controls={false}\n+          height=\"100%\"\n+          url={videoSource}\n+          className={styles.video}\n+        />\n+      )}\n+    </div>\n+  );\n+};\n"
+                },
+                {
+                    "date": 1704793109869,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   hasPriority,\n   style,\n   className,\n }) => {\n-  const { autoplay, loop, muted, videoUrl, thumbnail, youtubeSrc, sourceType } = videoProps || {};\n+  const { autoplay, videoUrl, thumbnail, youtubeSrc, sourceType } = videoProps || {};\n   const [playing, setPlaying] = useState(autoplay || false);\n   const [mounted, setMounted] = useState(false);\n \n   const videoSource =\n"
+                }
+            ],
+            "date": 1704792990821,
+            "name": "Commit-0",
+            "content": "export const Background = ({ type, videoProps, imageProps, overlay, position, hasPriority, style, className }) => {\n\n}"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "ui/sections/core/TwoColumns.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1704774302597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704774372791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,18 +2,16 @@\n import { cloneElement, isValidElement } from 'react';\n \n import styles from './styles/TwoColumns.module.css';\n \n-export const TwoColumnsLayout = ({ leftColumn, rightColumn }) => {\n-  return (\n-    <div>\n-      {isValidElement(leftColumn) &&\n-        cloneElement(leftColumn, {\n-          className: cx(styles.leftColumn, leftColumn?.props?.className),\n-        })}\n-      {isValidElement(rightColumn) &&\n-        cloneElement(rightColumn, {\n-          className: cx(styles.rightColumn, rightColumn?.props?.className),\n-        })}\n-    </div>\n-  );\n-};\n+ export const TwoColumnsLayout = ({ leftColumn, rightColumn }) => (\n+   <div>\n+     {isValidElement(leftColumn) &&\n+       cloneElement(leftColumn, {\n+         className: cx(styles.leftColumn, (leftColumn as ReactNode)?.props?.className),\n+       })}\n+     {isValidElement(rightColumn) &&\n+       cloneElement(rightColumn, {\n+         className: cx(styles.rightColumn, rightColumn?.props?.className),\n+       })}\n+   </div>\n+ );\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1704774416255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n export const TwoColumnsLayout = ({ leftColumn, rightColumn }) => (\n   <div>\n     {isValidElement(leftColumn) &&\n       cloneElement(leftColumn, {\n-        className: cx(styles.leftColumn, (leftColumn as ReactNode)?.props?.className),\n+        className: cx(styles.leftColumn, leftColumn?.props?.className),\n       })}\n     {isValidElement(rightColumn) &&\n       cloneElement(rightColumn, {\n         className: cx(styles.rightColumn, rightColumn?.props?.className),\n"
+                },
+                {
+                    "date": 1704774457920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,32 @@\n import { cloneElement, isValidElement } from 'react';\n \n import styles from './styles/TwoColumns.module.css';\n \n-export const TwoColumnsLayout = ({ leftColumn, rightColumn }) => (\n+interface TwoColumnsLayoutProps {\n+  leftColumn: React.ReactNode;\n+  rightColumn: React.ReactNode;\n+  textPosition?: 'left' | 'right';\n+  columnsWidth?: number[];\n+  containerProps?: any;\n+  classNames?: any;\n+  spacing?: number;\n+  styleProps?: {\n+    spacing?: number;\n+    padding?: {\n+      sm?: string;\n+      md?: string;\n+      lg?: string;\n+    };\n+    minHeight?: {\n+      sm?: string | number;\n+      md?: string | number;\n+      lg?: string | number;\n+    };\n+  };\n+}\n+\n+export const TwoColumnsLayout = ({ leftColumn, rightColumn }: TwoColumnsLayoutProps) => (\n   <div>\n     {isValidElement(leftColumn) &&\n       cloneElement(leftColumn, {\n         className: cx(styles.leftColumn, leftColumn?.props?.className),\n"
+                }
+            ],
+            "date": 1704774302597,
+            "name": "Commit-0",
+            "content": "import cx from 'clsx';\nimport { cloneElement, isValidElement } from 'react';\n\nimport styles from './styles/TwoColumns.module.css';\n\nexport const TwoColumnsLayout = ({ leftColumn, rightColumn }) => {\n  return (\n    <div>\n      {isValidElement(leftColumn) &&\n        cloneElement(leftColumn, {\n          className: cx(styles.leftColumn, leftColumn?.props?.className),\n        })}\n      {isValidElement(rightColumn) &&\n        cloneElement(rightColumn, {\n          className: cx(styles.rightColumn, rightColumn?.props?.className),\n        })}\n    </div>\n  );\n};\n"
+        }
+    ]
+}

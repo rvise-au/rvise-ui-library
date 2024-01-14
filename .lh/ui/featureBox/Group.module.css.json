@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/featureBox/Group.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1705205454195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1705205518753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n .root {\n+    margin: var(--features-group-margin-sm);\n   @media ($mantine-breakpoint-sm) {\n-    color: red;\n+    margin: var(--features-group-margin-md);\n   }\n   @media ($mantine-breakpoint-md) {\n-    color: red;\n+    margin: var(--features-group-margin-lg);\n   }\n }\n"
+                },
+                {
+                    "date": 1705205701236,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,8 @@\n   margin: var(--features-group-margin-sm);\n   @media ($mantine-breakpoint-sm) {\n     margin: var(--features-group-margin-md);\n   }\n-  @media ($mantine-breakpoint-md) {\n+  @media (min-width: $mantine-breakpoint-md) {\n     margin: var(--features-group-margin-lg);\n   }\n }\n"
+                }
+            ],
+            "date": 1705205454195,
+            "name": "Commit-0",
+            "content": ".root {\n\n    @media ($mantine-breakpoint-sm) {\n        color: red;\n    }\n        @media ($mantine-breakpoint-md) {\n        color: red;\n    }\n}"
+        }
+    ]
+}

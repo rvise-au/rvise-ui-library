@@ -1,0 +1,22 @@
+{
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "regex": "^clsx|^next|^@mantine|^react|^react-player",
+      "orderLevel": 5
+    },
+    {
+      "type": "importMember",
+      "regex": "^!.$",
+      "orderLevel": 5
+    },
+    {
+      "regex": "^[@]",
+      "orderLevel": 10
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 30
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+    "sourceFile": "ui/sections/stories/FeaturedSection.story.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1705204675193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1705204886555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,13 @@\n+import { Section } from '../core/Section';\n+import { SplitWithImage } from '../page/split/SplitWithImage';\n+import { textBlockMock } from './mock';\n+\n export default {\n   title: 'Featured Section',\n };\n+\n+export const SplitFeaturedOffsetImage = () => (\n+  <Section>\n+    <SplitWithImage isOffset textBlock={textBlockMock} mediaBlock={mediaOffsetBlock} />\n+  </Section>\n+);\n"
+                },
+                {
+                    "date": 1705204903454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,15 @@\n+import '';\n+\n import { Section } from '../core/Section';\n import { SplitWithImage } from '../page/split/SplitWithImage';\n-import { textBlockMock } from './mock';\n+import { mediaOffsetBlockMock, textBlockMock } from './mock';\n \n export default {\n   title: 'Featured Section',\n };\n \n export const SplitFeaturedOffsetImage = () => (\n   <Section>\n-    <SplitWithImage isOffset textBlock={textBlockMock} mediaBlock={mediaOffsetBlock} />\n+    <SplitWithImage isOffset textBlock={textBlockMock} mediaBlock={mediaOffsetBlockMock} />\n   </Section>\n );\n"
+                },
+                {
+                    "date": 1705204924057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n-import '';\n \n+\n import { Section } from '../core/Section';\n import { SplitWithImage } from '../page/split/SplitWithImage';\n import { mediaOffsetBlockMock, textBlockMock } from './mock';\n \n"
+                },
+                {
+                    "date": 1705205107420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import { FeatureBox } from '../../featureBox/Box';\n+import { FeaturedBoxGroup } from '../../featureBox/Group';\n import { Section } from '../core/Section';\n import { SplitWithImage } from '../page/split/SplitWithImage';\n import { mediaOffsetBlockMock, textBlockMock } from './mock';\n \n@@ -7,7 +9,42 @@\n };\n \n export const SplitFeaturedOffsetImage = () => (\n   <Section>\n-    <SplitWithImage isOffset textBlock={textBlockMock} mediaBlock={mediaOffsetBlockMock} />\n+    <SplitWithImage\n+      isOffset\n+      textBlock={{\n+        ...textBlockMock,\n+        children: (\n+          <>\n+            <FeaturedBoxGroup\n+              cols={{\n+                base: 1,\n+                xs: 2,\n+              }}\n+              verticalSpacing={32}\n+              style={{\n+                maxWidth: 980,\n+                margin: '6rem auto 0',\n+              }}\n+            >\n+              {MOCKDATA.map((item, index) => (\n+                <FeatureBox\n+                  key={index}\n+                  iconSize={28}\n+                  icon={item.icon}\n+                  heading={item.heading}\n+                  text={item.text}\n+                  iconBackgroundColor=\"green\"\n+                  iconVariant=\"filled\"\n+                  iconRadius=\"sm\"\n+                />\n+              ))}\n+            </FeaturedBoxGroup>\n+            {textBlockMock.children}\n+          </>\n+        ),\n+      }}\n+      mediaBlock={mediaOffsetBlockMock}\n+    />\n   </Section>\n );\n"
+                },
+                {
+                    "date": 1705205120427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import { FeatureBox } from '../../featureBox/Box';\n import { FeaturedBoxGroup } from '../../featureBox/Group';\n import { Section } from '../core/Section';\n import { SplitWithImage } from '../page/split/SplitWithImage';\n-import { mediaOffsetBlockMock, textBlockMock } from './mock';\n+import { featuresMock, mediaOffsetBlockMock, textBlockMock } from './mock';\n \n export default {\n   title: 'Featured Section',\n };\n@@ -26,9 +26,9 @@\n                 maxWidth: 980,\n                 margin: '6rem auto 0',\n               }}\n             >\n-              {MOCKDATA.map((item, index) => (\n+              {featuresMock.map((item, index) => (\n                 <FeatureBox\n                   key={index}\n                   iconSize={28}\n                   icon={item.icon}\n"
+                },
+                {
+                    "date": 1705205143340,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               }}\n               verticalSpacing={32}\n               style={{\n                 maxWidth: 980,\n-                margin: '6rem auto 0',\n+                margin: '2rem auto 0',\n               }}\n             >\n               {featuresMock.map((item, index) => (\n                 <FeatureBox\n"
+                },
+                {
+                    "date": 1705205153750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n               }}\n               verticalSpacing={32}\n               style={{\n                 maxWidth: 980,\n-                margin: '2rem auto 0',\n+                margin: '2rem auto 2rem',\n               }}\n             >\n               {featuresMock.map((item, index) => (\n                 <FeatureBox\n"
+                },
+                {
+                    "date": 1705205525508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,8 @@\n               }}\n               verticalSpacing={32}\n               style={{\n                 maxWidth: 980,\n-                margin: '2rem auto 2rem',\n               }}\n             >\n               {featuresMock.map((item, index) => (\n                 <FeatureBox\n"
+                },
+                {
+                    "date": 1705205569318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,11 @@\n               cols={{\n                 base: 1,\n                 xs: 1,\n               }}\n+              margins={{\n+                lg: '30px 0'\n+              }}\n               verticalSpacing={32}\n               style={{\n                 maxWidth: 980,\n               }}\n"
+                },
+                {
+                    "date": 1705205601842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n                 base: 1,\n                 xs: 1,\n               }}\n               margins={{\n-                lg: '30px 0',\n+                lg: '40px 0',\n               }}\n               verticalSpacing={32}\n               style={{\n                 maxWidth: 980,\n"
+                }
+            ],
+            "date": 1705204675193,
+            "name": "Commit-0",
+            "content": "export default {\n  title: 'Featured Section',\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": ".storybook/preview.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1704775861532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1704775877545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,13 @@\n const resolver: CSSVariablesResolver = (theme) => ({\n   variables: {\n     '--mantine-container-size': '1480px',\n   },\n+  light: {\n+    \n+  },\n+  dark: {\n+  },\n });\n \n function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {\n   const { setColorScheme } = useMantineColorScheme();\n"
+                },
+                {
+                    "date": 1704775885421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,13 @@\n const resolver: CSSVariablesResolver = (theme) => ({\n   variables: {\n     '--mantine-container-size': '1480px',\n   },\n-  light: {},\n-  dark: {},\n+  light: {\n+    \n+  },\n+  dark: {\n+  },\n });\n \n function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {\n   const { setColorScheme } = useMantineColorScheme();\n@@ -31,6 +34,10 @@\n }\n \n export const decorators = [\n   (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,\n-  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,\n+  (renderStory: any) => (\n+    <MantineProvider theme={theme} cssVariablesResolver={resolver}>\n+      {renderStory()}\n+    </MantineProvider>\n+  ),\n ];\n"
+                },
+                {
+                    "date": 1704775900341,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n const channel = addons.getChannel();\n \n const resolver: CSSVariablesResolver = (theme) => ({\n   variables: {\n-    '--mantine-container-size': '1480px',\n+    '--rvise-container-size': '1480px',\n   },\n   light: {},\n   dark: {},\n });\n"
+                }
+            ],
+            "date": 1704775861532,
+            "name": "Commit-0",
+            "content": "import '@mantine/core/styles.css';\nimport React, { useEffect } from 'react';\nimport { addons } from '@storybook/preview-api';\nimport { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';\nimport { MantineProvider, useMantineColorScheme, CSSVariablesResolver } from '@mantine/core';\nimport { theme } from '../theme';\n\nconst channel = addons.getChannel();\n\nconst resolver: CSSVariablesResolver = (theme) => ({\n  variables: {\n    '--mantine-container-size': '1480px',\n  },\n});\n\nfunction ColorSchemeWrapper({ children }: { children: React.ReactNode }) {\n  const { setColorScheme } = useMantineColorScheme();\n  const handleColorScheme = (value: boolean) => setColorScheme(value ? 'dark' : 'light');\n\n  useEffect(() => {\n    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);\n    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme);\n  }, [channel]);\n\n  return <>{children}</>;\n}\n\nexport const decorators = [\n  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,\n  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,\n];\n"
+        }
+    ]
+}

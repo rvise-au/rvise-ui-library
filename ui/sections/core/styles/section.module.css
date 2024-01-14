@@ -1,0 +1,11 @@
+.root {
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--mantine-container-size);
+  margin: 0 auto;
+}

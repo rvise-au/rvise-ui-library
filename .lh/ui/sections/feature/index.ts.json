@@ -1,0 +1,18 @@
+{
+    "sourceFile": "ui/sections/feature/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1704968519456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1704968519456,
+            "name": "Commit-0",
+            "content": "export { SplitWithImage as FeaturedSplitImage} from \"./split/SplitWithImage\";\n\n"
+        }
+    ]
+}
