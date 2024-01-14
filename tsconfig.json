@@ -19,7 +19,7 @@
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
       "@ui/*": ["./ui/*"],
-      "@type/*": ["./types/*"],
+      "@interface/*": ["./types/*"],
       "@utils/*": ["./utils/*"]
     },
     "plugins": [{ "name": "next" }]
