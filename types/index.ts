@@ -1,4 +1,4 @@
-import { MantineColor, MantineSize, TitleOrder, TitleSize } from '@mantine/core';
+import type { MantineColor, MantineSize, TitleOrder, TitleSize } from '@mantine/core';
 
 export type BackgroundPosition =
   | 'left top'
@@ -10,6 +10,13 @@ export type BackgroundPosition =
   | 'center top'
   | 'center center'
   | 'center bottom';
+
+export type MinHeight = {
+  lg?: string;
+  md?: string;
+  sm?: string;
+  base?: string;
+};
 
 export type TitleObject = {
   text: string;
@@ -37,7 +44,7 @@ export type Alignment =
   | 'center/top';
 
 export interface ITextBlock {
-  direction?: 'horizontal' | 'vertical';
+  direction?: 'justify' | 'stacked';
   slotBefore?: React.ReactNode;
   slotAfter?: React.ReactNode;
   alignment?: 'left' | 'center' | 'right';
@@ -46,6 +53,15 @@ export interface ITextBlock {
   heading: TitleObject | React.ReactNode;
   subheading?: TextObject | React.ReactNode;
   width?: 'xs' | 'sm' | 'md' | 'lg' | 'full';
+  classNames?: {
+    root?: string;
+    label?: string;
+    heading?: string;
+    subheading?: string;
+    children?: string;
+    slotBefore?: string;
+    slotAfter?: string;
+  };
 }
 
 export interface IMediaBlock {
@@ -83,9 +99,40 @@ export type BackgroundProps = {
   type?: 'image' | 'video' | 'color';
   videoProps?: VideoProps;
   imageProps?: ImageProps;
+  color: MantineColor;
   overlay?: 'dark' | 'light' | 'lighter' | 'darker' | 'none';
   position?: BackgroundPosition;
   hasPriority?: boolean;
   style?: React.CSSProperties;
   className?: string;
+  placement?: 'section' | 'container';
 };
+
+export type Paddings = {
+  sm: {
+    x: string;
+    y: string;
+  };
+  md: {
+    x: string;
+    y: string;
+  };
+  lg: {
+    x: string;
+    y: string;
+  };
+  base: {
+    x: string;
+    y: string;
+  };
+};
+
+export interface IStyledBox {
+  component?: any;
+  children?: React.ReactNode;
+  radius?: string;
+  shadow?: string;
+  background?: BackgroundProps;
+  padding?: Paddings;
+  hasDecoration?: boolean;
+}

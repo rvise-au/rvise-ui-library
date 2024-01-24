@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/styledBox/index.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706054005560,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706054162254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n-export const StyledBox = ({ component, children }) => {\n+export const StyledBox = ({ component, children, radius, shadow, styles, padding }) => {\n   const Component = component || 'div';\n   return <Component>{children}</Component>;\n };\n"
+                },
+                {
+                    "date": 1706054494159,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,8 @@\n-export const StyledBox = ({ component, children, radius, shadow, styles, padding }) => {\n+export const StyledBox = ({ component, children, radius, shadow, styles, padding, hasDecoration, ...rest }) => {\n   const Component = component || 'div';\n-  return <Component>{children}</Component>;\n+  return <Component style={{\n+    ...styles,\n+    ...(radius && {'--c-radius': radius}),\n+    ...(shadow && {'--c-shadow': shadow})\n+  }}>{children}</Component>;\n };\n"
+                }
+            ],
+            "date": 1706054005560,
+            "name": "Commit-0",
+            "content": "export const StyledBox = ({\n    component,\n    children,\n}) => {\n    const Component = component || 'div';\n    return (\n        <Component>\n            {children}\n        </Component>\n    )\n}"
+        }
+    ]
+}

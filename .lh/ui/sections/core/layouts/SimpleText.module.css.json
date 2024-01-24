@@ -1,0 +1,30 @@
+{
+    "sourceFile": "ui/sections/core/layouts/SimpleText.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1706048064659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706052404386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n .root {\n-  min-height: var(--min-height-lg);\n+  min-height: var(--min-height-base);\n }\n"
+                },
+                {
+                    "date": 1706056982636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n .root {\n   min-height: var(--min-height-base);\n+  box-shadow: var(--shadow-base);\n }\n"
+                },
+                {
+                    "date": 1706057905988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,3 @@\n .root {\n   min-height: var(--min-height-base);\n-  box-shadow: var(--shadow-base);\n }\n"
+                }
+            ],
+            "date": 1706048064659,
+            "name": "Commit-0",
+            "content": ".root {\n  min-height: var(--min-height-lg);\n}\n"
+        }
+    ]
+}

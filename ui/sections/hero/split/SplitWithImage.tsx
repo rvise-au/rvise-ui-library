@@ -1,8 +1,8 @@
 import cx from 'clsx';
 
-import { TwoColumns } from '@/ui/sections/core/layouts/TwoColumns';
 import { IMediaBlock, ITextBlock } from '@type/index';
 import { Media } from '@ui/media/Media';
+import { TwoColumns } from '@ui/sections/core/layouts/TwoColumns';
 import { SectionTitle } from '@ui/title/SectionTitle';
 import { getColumnWidth } from '@utils/get-column-width';
 
@@ -16,6 +16,7 @@ type SplitWithImageProps = {
   textBlock: ITextBlock;
   mediaBlock: IMediaBlock;
   columns: number[];
+  styles?: React.CSSProperties;
 };
 
 export const SplitWithImage = ({
@@ -34,7 +35,7 @@ export const SplitWithImage = ({
       columns={columns}
       className={cx(isFull && styles.full, isOffset && styles.offset, isAngled && styles.angled)}
       style={{
-        minHeight: '820px',
+        ...styles,
         '--media-col': isReverse
           ? `${getColumnWidth(columns?.[0])}vw`
           : `${getColumnWidth(columns?.[1])}vw`,

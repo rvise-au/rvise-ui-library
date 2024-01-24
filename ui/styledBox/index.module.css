@@ -1,0 +1,13 @@
+.styled {
+  position: relative;
+  background-color: var(--mantine-color-white);
+  padding: var(--c-py-base) var(--c-px-base);
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    padding: var(--c-py-md) var(--c-px-md);
+  }
+
+  @media (min-width: $mantine-breakpoint-lg) {
+    padding: var(--c-py-lg) var(--c-px-lg);
+  }
+}

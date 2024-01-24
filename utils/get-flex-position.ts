@@ -4,7 +4,7 @@ export const getFlexPosition = (position: string) => {
   const styles = [];
   switch (horizontal) {
     case 'left':
-      styles.push(' flex-start');
+      styles.push('flex-start');
       break;
     case 'center':
       styles.push('center');

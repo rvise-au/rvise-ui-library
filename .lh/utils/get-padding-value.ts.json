@@ -1,0 +1,26 @@
+{
+    "sourceFile": "utils/get-padding-value.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706062513186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706062528552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,2 @@\n-export const getPaddingValue = (value: number | string) => {\n-  return typeof value === 'number' ? `${value}px` : value;\n-};\n+export const getPaddingValue = (value: number | string) =>\n+  typeof value === 'number' ? `${value}px` : value;\n"
+                },
+                {
+                    "date": 1706063891116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,16 @@\n export const getPaddingValue = (value: number | string) =>\n   typeof value === 'number' ? `${value}px` : value;\n+\n+\n+  export const getPaddingStyles = (padding: any) => {\n+    const paddingStyles: { [key: string]: string } = {};\n+    ['base', 'md', 'lg'].forEach((size) => {\n+      if (padding?.[size]?.x) {\n+        paddingStyles[`--c-px-${size}`] = getPaddingValue(padding[size].x);\n+      }\n+      if (padding?.[size]?.y) {\n+        paddingStyles[`--c-py-${size}`] = getPaddingValue(padding[size].y);\n+      }\n+    });\n+    return paddingStyles;\n+  };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1706062513186,
+            "name": "Commit-0",
+            "content": "export const getPaddingValue = (value: number | string) => {\n    return typeof value === 'number' ? `${value}px` : value;\n}"
+        }
+    ]
+}

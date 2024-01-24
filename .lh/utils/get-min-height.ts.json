@@ -1,0 +1,26 @@
+{
+    "sourceFile": "utils/get-min-height.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706051316082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706051353358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+  \n import { MinHeight } from '@interface/index';\n \n export const getMinHeight = (minHeight: MinHeight) => {\n   const styles = {};\n"
+                },
+                {
+                    "date": 1706051378134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,22 +2,26 @@\n \n export const getMinHeight = (minHeight: MinHeight) => {\n   const styles = {};\n \n-  if (minHeight.base) {\n-    styles['--min-height-base'] = minHeight.base;\n-  }\n+if (minHeight.base) {\n+  // @ts-ignore\n+  styles['--min-height-base'] = minHeight.base;\n+}\n \n-  if (minHeight.sm) {\n-    styles['--min-height-sm'] = minHeight.sm;\n-  }\n+if (minHeight.sm) {\n+  // @ts-ignore\n+  styles['--min-height-sm'] = minHeight.sm;\n+}\n \n-  if (minHeight.md) {\n-    styles['--min-height-md'] = minHeight.md;\n-  }\n+if (minHeight.md) {\n+  // @ts-ignore\n+  styles['--min-height-md'] = minHeight.md;\n+}\n \n-  if (minHeight.lg) {\n-    styles['--min-height-lg'] = minHeight.lg;\n-  }\n+if (minHeight.lg) {\n+  // @ts-ignore\n+  styles['--min-height-lg'] = minHeight.lg;\n+}\n \n   return styles;\n };\n"
+                }
+            ],
+            "date": 1706051316082,
+            "name": "Commit-0",
+            "content": "import { MinHeight } from '@interface/index';\n\nexport const getMinHeight = (minHeight: MinHeight) => {\n    const styles = {};\n  \n    if (minHeight.base) {\n      styles['--min-height-base'] = minHeight.base;\n    }\n\n    if (minHeight.sm) {\n      styles['--min-height-sm'] = minHeight.sm;\n    }\n\n    if (minHeight.md) {\n      styles['--min-height-md'] = minHeight.md;\n    }\n\n    if (minHeight.lg) {\n      styles['--min-height-lg'] = minHeight.lg;\n    }\n\n    return styles;\n\n}"
+        }
+    ]
+}

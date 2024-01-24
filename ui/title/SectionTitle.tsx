@@ -17,46 +17,65 @@ export const SectionTitle = ({
   subheading,
   children,
   width = 'md',
+  classNames,
 }: ITextBlock) => {
-  const _labelElement = isValidElement(label) ? (
-    label
-  ) : (
-    <Text className={styles.label} size={label?.size || 'sm'}>
-      {label?.text}
-    </Text>
-  );
+  const _labelElement =
+    label &&
+    (isValidElement(label) ? (
+      label
+    ) : (
+      <Text className={cx(styles.label, classNames?.label)} size={label?.size || 'sm'}>
+        {label?.text}
+      </Text>
+    ));
 
-  const _headingElement = isValidElement(heading) ? (
-    heading
-  ) : (
-    <Title
-      className={styles.title}
-      order={heading?.order || (1 as TitleOrder)}
-      size={heading?.size || 'h1'}
-      c={heading?.color}
-    >
-      {heading?.text}
-    </Title>
-  );
+  const _headingElement =
+    heading &&
+    (isValidElement(heading) ? (
+      heading
+    ) : (
+      <Title
+        className={cx(styles.title, classNames?.heading)}
+        order={heading?.order || (1 as TitleOrder)}
+        size={heading?.size || 'h1'}
+        c={heading?.color}
+      >
+        {heading?.text}
+      </Title>
+    ));
 
-  const _textElement = isValidElement(subheading) ? (
-    subheading
-  ) : (
-    <Text className={styles.text} size={subheading?.size || 'sm'} color={subheading?.color}>
-      {subheading?.text}
-    </Text>
-  );
+  const _textElement =
+    subheading &&
+    (isValidElement(subheading) ? (
+      subheading
+    ) : (
+      <Text
+        className={cx(styles.text, classNames?.subheading)}
+        size={subheading?.size || 'sm'}
+        color={subheading?.color}
+      >
+        {subheading?.text}
+      </Text>
+    ));
 
   return (
-    <div className={cx('title', styles.root)} data-direction={direction} data-alignment={alignment}>
-      {slotBefore ? <div className={styles.slotBefore}>{slotBefore}</div> : null}
+    <div
+      className={cx('title', styles.root, classNames?.root)}
+      data-direction={direction}
+      data-alignment={alignment}
+    >
+      {slotBefore ? (
+        <div className={cx(styles.slotBefore, classNames?.slotBefore)}>{slotBefore}</div>
+      ) : null}
       <div className={cx(styles.inner, styles[`width_${width}`])} data-alignment={alignment}>
         {_labelElement}
         {_headingElement}
         {_textElement}
         {children}
       </div>
-      {slotAfter ? <div className={styles.slotAfter}>{slotAfter}</div> : null}
+      {slotAfter ? (
+        <div className={cx(styles.slotAfter, classNames?.slotAfter)}>{slotAfter}</div>
+      ) : null}
     </div>
   );
 };

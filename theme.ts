@@ -1,6 +1,6 @@
 'use client';
 
-import { createTheme, Title } from '@mantine/core';
+import { createTheme, CSSVariablesResolver, Title } from '@mantine/core';
 
 export const theme = createTheme({
   /* Put your mantine theme override here */
@@ -64,5 +64,38 @@ export const theme = createTheme({
         },
       },
     }),
+  },
+  other: {
+    sectionMargin: {
+      sm: '76px',
+      md: '82px',
+      lg: '94px',
+      xl: '120px',
+    },
+    padding: {
+      base: {
+        x: '64px',
+        y: '64px',
+      },
+      md: {
+        x: '64px',
+        y: '64px',
+      },
+      lg: {
+        x: '64px',
+        y: '72px',
+      },
+    },
+  },
+});
+
+// @ts-ignore
+export const varResolver: CSSVariablesResolver = (theme) => ({
+  variables: {
+    '--mantine-section-margin-sm': theme.other.sectionMargin.sm,
+    '--mantine-section-margin-md': theme.other.sectionMargin.md,
+    '--mantine-section-margin-lg': theme.other.sectionMargin.lg,
+    '--mantine-section-margin-xl': theme.other.sectionMargin.xl,
+    '--mantine-container-size': '1480px',
   },
 });

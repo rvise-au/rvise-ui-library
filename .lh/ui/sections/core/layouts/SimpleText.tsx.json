@@ -1,0 +1,42 @@
+{
+    "sourceFile": "ui/sections/core/layouts/SimpleText.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1706048056656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706049060650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,16 +7,18 @@\n import styles from './SimpleText.module.css';\n \n type SimpleTextProps = {\n   textBlock: ITextBlock;\n-  minHeight: string;\n-  alignment: Alignment;\n+  minHeight?: string;\n+  alignment?: Alignment;\n+  children?: React.ReactNode;\n };\n \n export const SimpleText = ({\n   textBlock,\n   minHeight,\n   alignment = 'center/center',\n+  children,\n }: SimpleTextProps) => (\n   <Flex\n     direction=\"column\"\n     className={cx('SimpleText', styles.root)}\n@@ -25,7 +27,8 @@\n     style={{\n       '--min-height-lg': minHeight,\n     }}\n   >\n-    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0]} />\n+    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0] as ITextBlock['alignment']} />\n+    {children}\n   </Flex>\n );\n"
+                },
+                {
+                    "date": 1706049308287,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,11 @@\n     style={{\n       '--min-height-lg': minHeight,\n     }}\n   >\n-    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0] as ITextBlock['alignment']} />\n+    <SectionTitle\n+      {...textBlock}\n+      alignment={getFlexPosition(alignment)[0] as ITextBlock['alignment']}\n+    />\n     {children}\n   </Flex>\n );\n"
+                },
+                {
+                    "date": 1706050912642,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,29 +3,32 @@\n \n import { Alignment, ITextBlock } from '../../../../types';\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n-import styles from './SimpleText.module.css';\n+import classes from './SimpleText.module.css';\n \n type SimpleTextProps = {\n   textBlock: ITextBlock;\n   minHeight?: string;\n   alignment?: Alignment;\n   children?: React.ReactNode;\n+  styles?: React.CSSProperties;\n };\n \n export const SimpleText = ({\n   textBlock,\n   minHeight,\n   alignment = 'center/center',\n   children,\n+  styles,\n }: SimpleTextProps) => (\n   <Flex\n     direction=\"column\"\n-    className={cx('SimpleText', styles.root)}\n+    className={cx('SimpleText', classes.root)}\n     justify={getFlexPosition(alignment)[1]}\n     align={getFlexPosition(alignment)[0]}\n     style={{\n+      ...styles,\n       '--min-height-lg': minHeight,\n     }}\n   >\n     <SectionTitle\n"
+                },
+                {
+                    "date": 1706051047751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n import classes from './SimpleText.module.css';\n \n+import  type {MinHeight} from '@types/index'\n+\n type SimpleTextProps = {\n   textBlock: ITextBlock;\n   minHeight?: string;\n   alignment?: Alignment;\n"
+                },
+                {
+                    "date": 1706051064491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n import classes from './SimpleText.module.css';\n \n-import type { MinHeight } from '@types/index';\n+import type { MinHeight } from '@type/index';\n \n type SimpleTextProps = {\n   textBlock: ITextBlock;\n-  minHeight?: string;\n+  minHeight?: MinHeight;\n   alignment?: Alignment;\n   children?: React.ReactNode;\n   styles?: React.CSSProperties;\n };\n"
+                },
+                {
+                    "date": 1706051075239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,12 @@\n import { Flex } from '@mantine/core';\n import cx from 'clsx';\n \n-import { Alignment, ITextBlock } from '../../../../types';\n import { getFlexPosition } from '../../../../utils/get-flex-position';\n import { SectionTitle } from '../../../title/SectionTitle';\n import classes from './SimpleText.module.css';\n \n-import type { MinHeight } from '@type/index';\n+import type { MinHeight, Alignment, ITextBlock } from '@type/index';\n \n type SimpleTextProps = {\n   textBlock: ITextBlock;\n   minHeight?: MinHeight;\n"
+                }
+            ],
+            "date": 1706048056656,
+            "name": "Commit-0",
+            "content": "import { Flex } from '@mantine/core';\nimport cx from 'clsx';\n\nimport { Alignment, ITextBlock } from '../../../../types';\nimport { getFlexPosition } from '../../../../utils/get-flex-position';\nimport { SectionTitle } from '../../../title/SectionTitle';\nimport styles from './SimpleText.module.css';\n\ntype SimpleTextProps = {\n  textBlock: ITextBlock;\n  minHeight: string;\n  alignment: Alignment;\n};\n\nexport const SimpleText = ({\n  textBlock,\n  minHeight,\n  alignment = 'center/center',\n}: SimpleTextProps) => (\n  <Flex\n    direction=\"column\"\n    className={cx('SimpleText', styles.root)}\n    justify={getFlexPosition(alignment)[1]}\n    align={getFlexPosition(alignment)[0]}\n    style={{\n      '--min-height-lg': minHeight,\n    }}\n  >\n    <SectionTitle {...textBlock} alignment={getFlexPosition(alignment)[0]} />\n  </Flex>\n);\n"
+        }
+    ]
+}

@@ -1,6 +1,15 @@
 .root {
   position: relative;
   overflow: hidden;
+  margin-bottom: var(--s-mb-base);
+
+  &[data-decorated='true'] {
+    padding: var(--mantine-spacing-6) 0;
+
+    @media (min-width: $mantine-breakpoint-sm) {
+      padding: var(--mantine-spacing-7) 0;
+    }
+  }
 }
 
 .container {
@@ -8,4 +17,5 @@
   flex-direction: column;
   max-width: var(--mantine-container-size);
   margin: 0 auto;
+  padding: 0 var(--mantine-spacing-5);
 }

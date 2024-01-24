@@ -9,7 +9,7 @@ type SectionProps = {
   id?: string;
   className?: string;
   sectionStyle?: React.CSSProperties;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   renderChildren?: () => React.ReactNode;
   afterContent?: React.ReactNode;
   beforeContent?: React.ReactNode;
@@ -18,6 +18,7 @@ type SectionProps = {
   containerSize?: 'sm' | 'md' | 'lg' | 'xl';
   containerStyle?: React.CSSProperties;
   background?: BackgroundProps;
+  marginBottom?: 'sm' | 'md' | 'lg' | 'xl';
 };
 
 export const Section = ({
@@ -30,36 +31,42 @@ export const Section = ({
   isFirst,
   sectionStyle = {},
   containerClassName,
-  containerSize,
+  containerSize = 'md',
   containerStyle = {},
   background,
-}: SectionProps) => (
-  <section
-    id={id}
-    className={cx('section', styles.root, className)}
-    style={{
-      ...sectionStyle,
-      backgroundColor: background?.placement === 'section' && background?.color,
-    }}
-    data-first={isFirst}
-  >
-    {background?.placement === 'section' && <Background {...background} />}
-    {beforeContent}
-    {renderChildren ? (
-      renderChildren()
-    ) : (
-      <div
-        className={cx(styles.container, containerClassName)}
-        data-size={containerSize}
-        style={{
-          ...containerStyle,
-          backgroundColor: background?.placement === 'container' && background?.color,
-        }}
-      >
-        {background?.placement === 'container' && <Background {...background} />}
-        {children}
-      </div>
-    )}
-    {afterContent}
-  </section>
-);
+  marginBottom,
+}: SectionProps) => {
+  const isOnSection = background?.placement === 'section';
+  const isColor = background?.type === 'color';
+  return (
+    <section
+      id={id}
+      className={cx('section', styles.root, className)}
+      data-decorated={!!background && isOnSection}
+      style={{
+        ...sectionStyle,
+        backgroundColor: isOnSection && background && isColor && background?.color,
+        '--s-mb-base': marginBottom ? `var(--mantine-section-margin-${marginBottom})` : undefined,
+      }}
+      data-first={isFirst}
+    >
+      {isOnSection && background && !isColor && <Background {...background} />}
+      {beforeContent}
+      {renderChildren ? (
+        renderChildren()
+      ) : (
+        <div
+          className={cx(styles.container, containerClassName)}
+          data-size={containerSize}
+          style={{
+            ...containerStyle,
+            backgroundColor: !isOnSection && background && isColor && background?.color,
+          }}
+        >
+          {children}
+        </div>
+      )}
+      {afterContent}
+    </section>
+  );
+};

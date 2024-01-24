@@ -1,0 +1,26 @@
+{
+    "sourceFile": "ui/styledBox/index.module.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1706059257335,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706059262672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n .root {\n-  padding: var(--c-px-base) var(--c-py-base);\n+  padding: var(--c-py-base) var(--c-px-base);\n }\n"
+                },
+                {
+                    "date": 1706061693688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n-.root {\n+.styled {\n   padding: var(--c-py-base) var(--c-px-base);\n }\n"
+                }
+            ],
+            "date": 1706059257335,
+            "name": "Commit-0",
+            "content": ".root {\n    padding: var(--c-px-base) var(--c-py-base);\n}"
+        }
+    ]
+}
