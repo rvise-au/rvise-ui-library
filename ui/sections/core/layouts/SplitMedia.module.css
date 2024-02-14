@@ -1,6 +1,6 @@
 .root {
   position: relative;
-  min-height: 920px;
+  min-height: var(--min-height-base);
 }
 
 .full .media {
@@ -13,12 +13,15 @@
 }
 
 .offset .media {
-  @media (min-width: $mantine-breakpoint-sm) {
-    margin-left: 5vw;
+  width: 100%;
+
+  > div {
+    width: fit-content;
+    align-self: stretch;
   }
 
-  @media (min-width: $mantine-breakpoint-lg) {
-    margin-left: 5.5vw;
+  img {
+    height: 100%;
   }
 }
 

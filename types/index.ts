@@ -69,6 +69,14 @@ export interface IMediaBlock {
   imageProps?: ImageProps;
   videoProps?: VideoProps;
   type?: 'image' | 'video';
+  radius?: string;
+  fade?: boolean;
+  aspectRatio?: {
+    base: string;
+    sm: string;
+    md: string;
+    lg: string;
+  };
 }
 
 export type VideoProps = {
@@ -135,4 +143,6 @@ export interface IStyledBox {
   background?: BackgroundProps;
   padding?: Paddings;
   hasDecoration?: boolean;
+  align?: Alignment;
+  justify?: Alignment;
 }

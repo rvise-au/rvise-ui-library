@@ -24,7 +24,13 @@ export const SectionTitle = ({
     (isValidElement(label) ? (
       label
     ) : (
-      <Text className={cx(styles.label, classNames?.label)} size={label?.size || 'sm'}>
+      <Text
+        component="span"
+        className={cx(styles.label, classNames?.label)}
+        size={label?.size || 'sm'}
+        fw={label?.weight}
+        c={label?.color}
+      >
         {label?.text}
       </Text>
     ));
@@ -52,7 +58,7 @@ export const SectionTitle = ({
       <Text
         className={cx(styles.text, classNames?.subheading)}
         size={subheading?.size || 'sm'}
-        color={subheading?.color}
+        c={subheading?.color}
       >
         {subheading?.text}
       </Text>

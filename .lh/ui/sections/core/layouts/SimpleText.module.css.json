@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1706048064659,
@@ -20,6 +20,18 @@
                 {
                     "date": 1706057905988,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,3 @@\n .root {\n   min-height: var(--min-height-base);\n-  box-shadow: var(--shadow-base);\n }\n"
+                },
+                {
+                    "date": 1706780765053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,4 @@\n .root {\n   min-height: var(--min-height-base);\n+  gap: var(--mantine-spacing-10)\n }\n"
+                },
+                {
+                    "date": 1706780772940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,4 @@\n .root {\n   min-height: var(--min-height-base);\n-  gap: var(--mantine-spacing-10);\n+  gap: var(--mantine-spacing-8);\n }\n"
+                },
+                {
+                    "date": 1707777506622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,14 @@\n .root {\n   min-height: var(--min-height-base);\n   gap: var(--mantine-spacing-8);\n+\n+  @media ($mantine-breakpoint-sm) {\n+    min-height: var(--min-height-sm);\n+  }\n+  @media ($mantine-breakpoint-md) {\n+    min-height: var(--min-height-md);\n+  }\n+    @media ($mantine-breakpoint-lg) {\n+    min-height: var(--min-height-lg);\n+  }\n }\n"
                 }
             ],
             "date": 1706048064659,

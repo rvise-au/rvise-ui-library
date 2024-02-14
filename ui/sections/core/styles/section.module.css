@@ -18,4 +18,8 @@
   max-width: var(--mantine-container-size);
   margin: 0 auto;
   padding: 0 var(--mantine-spacing-5);
+
+  div[data-overflow='false'] {
+    overflow: hidden;
+  }
 }

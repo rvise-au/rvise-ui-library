@@ -6,6 +6,7 @@ import { RightBottomBlurSpot } from '../../decorations/rightBottomBlurSpot/Right
 import { FeatureBox } from '../../featureBox/Box';
 import { FeaturedBoxGroup } from '../../featureBox/Group';
 import { SimpleText } from '../core/layouts/SimpleText';
+import { SplitMedia } from '../core/layouts/SplitMedia';
 import { Section } from '../core/Section';
 
 const svg =
@@ -240,7 +241,13 @@ export const SimpleHerWithBgLeftAligned = () => (
 
 export const SimpleHeroWithDecorators = () => (
   <Section beforeContent={<LeftTopBlurSpot />} afterContent={<RightBottomBlurSpot />}>
-    <SimpleText minHeight="680px" alignment="center/center" textBlock={textBlock} />
+    <SimpleText
+      minHeight={{
+        base: 680,
+      }}
+      alignment="center/center"
+      textBlock={textBlock}
+    />
   </Section>
 );
 
@@ -252,7 +259,13 @@ export const SimpleHeroWithColorBg = () => (
       color: '#fff7c7',
     }}
   >
-    <SimpleText minHeight="680px" alignment="center/center" textBlock={textBlock} />
+    <SimpleText
+      minHeight={{
+        base: 680,
+      }}
+      alignment="center/center"
+      textBlock={textBlock}
+    />
   </Section>
 );
 
@@ -268,7 +281,9 @@ export const SimpleHeroWithBackgroundImage = () => (
     }}
   >
     <SimpleText
-      minHeight="720px"
+      minHeight={{
+        base: 720,
+      }}
       alignment="center/center"
       textBlock={{
         ...textBlock,
@@ -301,14 +316,54 @@ export const SimpleHeroWithVideo = () => (
       },
     }}
   >
-    <SimpleText minHeight="680px" alignment="center/center" textBlock={textBlock} />
+    <SimpleText
+      minHeight={{
+        base: '80vw',
+      }}
+      alignment="center/center"
+      textBlock={textBlock}
+    />
   </Section>
 );
 
-/* 
+export const SplitWithImageOffset = () => (
+  <Section beforeContent={<LeftTopBlurSpot />} afterContent={<RightBottomBlurSpot />} hasDecoration>
+    <SplitMedia
+      isOffset
+      columns={[7, 5]}
+      minHeight={{
+        base: '800px',
+      }}
+      mediaBlockProps={{
+        radius: 'md',
+        shadow: 'md',
+        padding: {
+          base: {
+            x: 24,
+            y: 24,
+          },
+          md: {
+            x: 14,
+            y: 14,
+          },
+        },
+        background: {
+          type: 'color',
+          color: '#eee',
+        },
+      }}
+      textBlock={textBlock}
+      mediaBlock={mediaOffsetBlock}
+    />
+  </Section>
+);
+
 export const SplitWithImageDefault = () => (
   <Section>
-    <SplitWithImage
+    <SplitMedia
+      minHeight={{
+        base: '800px',
+      }}
       columns={[7, 5]}
       textBlock={textBlock}
       mediaBlock={{
@@ -323,6 +378,8 @@ export const SplitWithImageDefault = () => (
     />
   </Section>
 );
+/* 
+
 
 export const SplitWithImageFull = () => (
   <Section>

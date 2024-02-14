@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1705204451482,
@@ -16,6 +16,30 @@
                 {
                     "date": 1705204603882,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n-import styles from '../styles/TwoColumns.module.css';\n+import styles from './TwoColumns.module.css';\n \n interface TwoColumnsProps {\n   left: React.ReactNode;\n   right: React.ReactNode;\n"
+                },
+                {
+                    "date": 1706071652704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n+import { StyledBox } from '@ui/styledBox';\n+\n import styles from './TwoColumns.module.css';\n \n interface TwoColumnsProps {\n   left: React.ReactNode;\n@@ -20,9 +22,9 @@\n   className,\n   style,\n   dataAttributes,\n }: TwoColumnsProps) => (\n-  <div className={cx(styles.root, className)} style={style} {...dataAttributes}>\n+  <StyledBox className={cx(styles.root, className)} style={style} {...dataAttributes}>\n     {left &&\n       isValidElement(left) &&\n       // Clone the leftColumn element and add a className to it for styling\n       cloneElement(left, {\n@@ -33,6 +35,6 @@\n       // Clone the rightColumn element and add a className to it for styling\n       cloneElement(right, {\n         className: cx(styles.rightColumn, styles[`col_${columns[1]}`], right.props?.className),\n       })}\n-  </div>\n+  </StyledBox>\n );\n"
+                },
+                {
+                    "date": 1706071687390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,13 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n+import { IStyledBox } from '@interface/index';\n import { StyledBox } from '@ui/styledBox';\n \n import styles from './TwoColumns.module.css';\n \n-interface TwoColumnsProps {\n+interface TwoColumnsProps extends IStyledBox {\n   left: React.ReactNode;\n   right: React.ReactNode;\n   columns?: number[];\n   className?: string;\n@@ -21,10 +22,11 @@\n   columns = [6, 6],\n   className,\n   style,\n   dataAttributes,\n+  ...rest\n }: TwoColumnsProps) => (\n-  <StyledBox className={cx(styles.root, className)} style={style} {...dataAttributes}>\n+  <StyledBox className={cx(styles.root, className)} style={style} {...dataAttributes} {...rest}>\n     {left &&\n       isValidElement(left) &&\n       // Clone the leftColumn element and add a className to it for styling\n       cloneElement(left, {\n"
+                },
+                {
+                    "date": 1707193008927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n+import { StyledBox } from '@/ui/styledBox/StyledBox';\n import { IStyledBox } from '@interface/index';\n-import { StyledBox } from '@ui/styledBox';\n \n import styles from './TwoColumns.module.css';\n \n interface TwoColumnsProps extends IStyledBox {\n"
+                },
+                {
+                    "date": 1707193039494,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import cx from 'clsx';\n import { cloneElement, isValidElement } from 'react';\n \n-import { StyledBox } from '@/ui/styledBox/StyledBox';\n import { IStyledBox } from '@interface/index';\n+import { StyledBox } from '@ui/styledBox/StyledBox';\n \n import styles from './TwoColumns.module.css';\n \n interface TwoColumnsProps extends IStyledBox {\n"
+                },
+                {
+                    "date": 1707781811475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,8 +12,10 @@\n   columns?: number[];\n   className?: string;\n   style?: React.CSSProperties;\n   dataAttributes?: Record<string, unknown>;\n+  slotBefore?: React.ReactNode;\n+  slotAfter?: React.ReactNode;\n }\n \n // TwoColumns is a layout component that takes two React nodes and renders them side by side.\n export const TwoColumns = ({\n@@ -22,8 +24,10 @@\n   columns = [6, 6],\n   className,\n   style,\n   dataAttributes,\n+  slotBefore,\n+  slotAfter,\n   ...rest\n }: TwoColumnsProps) => (\n   <StyledBox className={cx(styles.root, className)} style={style} {...dataAttributes} {...rest}>\n     {left &&\n"
+                },
+                {
+                    "date": 1707781821196,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,8 +29,9 @@\n   slotAfter,\n   ...rest\n }: TwoColumnsProps) => (\n   <StyledBox className={cx(styles.root, className)} style={style} {...dataAttributes} {...rest}>\n+    {slotBefore}\n     {left &&\n       isValidElement(left) &&\n       // Clone the leftColumn element and add a className to it for styling\n       cloneElement(left, {\n@@ -41,6 +42,7 @@\n       // Clone the rightColumn element and add a className to it for styling\n       cloneElement(right, {\n         className: cx(styles.rightColumn, styles[`col_${columns[1]}`], right.props?.className),\n       })}\n+    {slotAfter}\n   </StyledBox>\n );\n"
                 }
             ],
             "date": 1705204451482,

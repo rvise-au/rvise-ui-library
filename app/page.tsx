@@ -1,10 +1,15 @@
+import { FeatureBox } from '@ui/featureBox/Box';
+import { FeaturedBoxGroup } from '@ui/featureBox/Group';
+import { SimpleText } from '@ui/sections/core/layouts/SimpleText';
+import { SplitMedia } from '@ui/sections/core/layouts/SplitMedia';
+
 import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeToggle';
 import { Welcome } from '../components/Welcome/Welcome';
 import { ButtonGroup } from '../ui/buttons/Group';
 import { LeftTopBlurSpot } from '../ui/decorations/leftTopBlurSpot/LeftTopBlurSpot';
 import { RightBottomBlurSpot } from '../ui/decorations/rightBottomBlurSpot/RightBottomBlurSpot';
 import { Section } from '../ui/sections/core/Section';
-import { SimpleText } from '../ui/sections/core/simpleText/SimpleText';
+import { featuresMock, mediaOffsetBlockMock, textBlockMock } from '../ui/sections/stories/mock';
 
 const textBlock = {
   heading: {
@@ -62,7 +67,9 @@ export default function HomePage() {
       <ColorSchemeToggle />
       <Section>
         <SimpleText
-          minHeight="680px"
+          minHeight={{
+            base: 680,
+          }}
           alignment="center/center"
           //@ts-ignore
           textBlock={textBlock}
@@ -75,7 +82,9 @@ export default function HomePage() {
         afterContent={<RightBottomBlurSpot />}
       >
         <SimpleText
-          minHeight="680px"
+          minHeight={{
+            base: 680,
+          }}
           alignment="left/center"
           //@ts-ignore
           textBlock={textBlock}
@@ -87,7 +96,9 @@ export default function HomePage() {
         afterContent={<RightBottomBlurSpot />}
       >
         <SimpleText
-          minHeight="680px"
+          minHeight={{
+            base: 680,
+          }}
           alignment="center/center"
           //@ts-ignore
           textBlock={textBlock}
@@ -102,7 +113,9 @@ export default function HomePage() {
         }}
       >
         <SimpleText
-          minHeight="680px"
+          minHeight={{
+            base: 680,
+          }}
           alignment="center/center"
           //@ts-ignore
           textBlock={textBlock}
@@ -119,7 +132,9 @@ export default function HomePage() {
         }}
       >
         <SimpleText
-          minHeight="720px"
+          minHeight={{
+            base: 680,
+          }}
           alignment="center/center"
           textBlock={{
             ...textBlock,
@@ -149,7 +164,73 @@ export default function HomePage() {
           },
         }}
       >
-        <SimpleText minHeight="680px" alignment="center/center" textBlock={textBlock} />
+        <SimpleText
+          minHeight={{
+            base: 680,
+          }}
+          alignment="center/center"
+          textBlock={textBlock}
+        />
+      </Section>
+      <Section
+        background={{
+          placement: 'container',
+          type: 'color',
+          color: '#f5f5f5',
+        }}
+        containerProps={{
+          radius: 'xl',
+          hasDecoration: true,
+          padding: {
+            base: '20px 0',
+            md: '60px',
+            lg: {
+              x: 60,
+              y: 80,
+            },
+          },
+        }}
+      >
+        <SplitMedia
+          isOffset
+          textBlock={{
+            ...textBlockMock,
+            children: (
+              <>
+                <FeaturedBoxGroup
+                  cols={{
+                    base: 1,
+                    xs: 1,
+                  }}
+                  margins={{
+                    lg: '35px 0',
+                    md: '24px 0',
+                    sm: '20px 0',
+                  }}
+                  verticalSpacing={32}
+                  style={{
+                    maxWidth: 980,
+                  }}
+                >
+                  {featuresMock.map((item, index) => (
+                    <FeatureBox
+                      key={index}
+                      iconSize={28}
+                      icon={item.icon}
+                      heading={item.heading}
+                      text={item.text}
+                      iconBackgroundColor="green"
+                      iconVariant="filled"
+                      iconRadius="sm"
+                    />
+                  ))}
+                </FeaturedBoxGroup>
+                {textBlockMock.children}
+              </>
+            ),
+          }}
+          mediaBlock={mediaOffsetBlockMock}
+        />
       </Section>
     </>
   );

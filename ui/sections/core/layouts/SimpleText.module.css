@@ -1,3 +1,15 @@
 .root {
   min-height: var(--min-height-base);
+  gap: var(--mantine-spacing-8);
+  transition: all var(--mantine-transition-ease);
+  z-index: 3;
+  @media (min-width: $mantine-breakpoint-sm) {
+    min-height: var(--min-height-sm, var(--min-height-base));
+  }
+  @media (min-width: $mantine-breakpoint-md) {
+    min-height: var(--min-height-md, var(--min-height-base));
+  }
+  @media (min-width: $mantine-breakpoint-lg) {
+    min-height: var(--min-height-lg, var(--min-height-base));
+  }
 }

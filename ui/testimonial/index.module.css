@@ -1,0 +1,52 @@
+.card {
+  gap: var(--mantine-spacing-4);
+  background-color: var(--quote-background-color, transparent);
+  blockquote {
+    padding: 0;
+    margin: 0;
+
+    .quote {
+      &:before {
+        content: '\201C';
+      }
+      &:after {
+        content: '\201D';
+      }
+    }
+  }
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+.default {
+  font-size: rem(16);
+
+  blockquote {
+    font-weight: normal;
+  }
+}
+
+.accent {
+  font-size: rem(22);
+  line-height: 1.4;
+  gap: var(--mantine-spacing-6);
+  blockquote {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mantine-spacing-4);
+  }
+}
+
+.small {
+  blockquote {
+    font-size: rem(14);
+  }
+}
+
+.inline {
+  border-left: 1px solid var(--quote-border-color);
+}

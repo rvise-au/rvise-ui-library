@@ -1,4 +1,35 @@
 .root {
-  height: 100%;
   position: relative;
+  display: grid;
+  border-radius: var(--mediaBox-radius, 0);
+  aspect-ratio: var(--ar-base);
+
+  @media (min-width: $mantine-breakpoint-sm) {
+    aspect-ratio: var(--ar-sm);
+  }
+
+  @media (min-width: $mantine-breakpoint-md) {
+    aspect-ratio: var(--ar-md);
+  }
+  @media (min-width: $mantine-breakpoint-lg) {
+    aspect-ratio: var(--ar-lg);
+  }
+}
+
+.fade {
+  position: relative;
+}
+
+.fadeInner {
+  padding-top: 7%;
+  left: -5rem;
+  right: -5rem;
+  position: absolute;
+  bottom: 0px;
+  background-image: linear-gradient(to top, rgb(255, 255, 255), rgba(255, 255, 255, 0));
+}
+
+.filled {
+  position: relative;
+  width: 100%;
 }

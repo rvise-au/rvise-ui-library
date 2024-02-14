@@ -1,0 +1,42 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  gap: var(--mantine-spacing-2);
+  align-items: center;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  * {
+    font-size: rem(14);
+  }
+}
+
+.centered {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .meta {
+    span {
+      position: relative;
+      &:not(:last-of-type):after {
+        content: '\00B7';
+        font-size: rem(24);
+        align-self: center;
+        line-height: 0;
+        padding: 0 rem(5);
+      }
+    }
+  }
+}
+
+.name {
+  font-weight: 700;
+}

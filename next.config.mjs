@@ -17,4 +17,8 @@ export default withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [{ hostname: 'images.unsplash.com' }, { hostname: 'loremflickr.com' }],
+  },
 });

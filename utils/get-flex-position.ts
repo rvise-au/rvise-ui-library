@@ -1,6 +1,7 @@
 export const getFlexPosition = (position: string) => {
   // position is a string like 'left/top'
   const [horizontal, vertical] = position.split('/');
+
   const styles = [];
   switch (horizontal) {
     case 'left':

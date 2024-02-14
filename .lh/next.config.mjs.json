@@ -3,11 +3,19 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1704860415443,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1706067789316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,12 @@\n   },\n   experimental: {\n     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],\n   },\n+  images: {\n+    formats: ['image/avif', 'image/webp'],\n+    remotePatterns: [\n+      { hostname: 'source.unsplash.com' },\n+      { hostname: 'loremflickr.com' },\n+    ],\n+  },\n });\n"
+                },
+                {
+                    "date": 1706067835228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,7 @@\n     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],\n   },\n   images: {\n     formats: ['image/avif', 'image/webp'],\n-    remotePatterns: [{ hostname: 'source.unsplash.com' }, { hostname: 'loremflickr.com' }],\n+    remotePatterns: [{ hostname: 'images.unsplash.com' }, { hostname: 'loremflickr.com' }],\n   },\n });\n"
                 }
             ],
             "date": 1704860415443,

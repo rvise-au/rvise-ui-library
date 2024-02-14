@@ -1,13 +1,10 @@
-import { Flex } from '@mantine/core';
-import cx from 'clsx';
+import { Stack } from '@mantine/core';
 
 import { Alignment, IStyledBox, ITextBlock, MinHeight } from '@interface/index';
-import { StyledBox } from '@ui/styledBox';
+import { StyledBox } from '@ui/styledBox/StyledBox';
 import { SectionTitle } from '@ui/title/SectionTitle';
 import { getFlexPosition } from '@utils/get-flex-position';
 import { getMinHeight } from '@utils/get-min-height';
-
-import classes from './SimpleText.module.css';
 
 interface SimpleTextProps extends IStyledBox {
   textBlock: ITextBlock;
@@ -16,6 +13,8 @@ interface SimpleTextProps extends IStyledBox {
   children?: React.ReactNode;
   styles?: React.CSSProperties;
   hasDecoration?: boolean;
+  slotBefore?: React.ReactNode;
+  slotAfter?: React.ReactNode;
 }
 
 export const SimpleText = ({
@@ -24,12 +23,13 @@ export const SimpleText = ({
   children,
   styles,
   minHeight,
+  slotBefore,
+  slotAfter,
   ...rest
 }: SimpleTextProps) => (
   <StyledBox
-    component={Flex}
+    component={Stack}
     direction="column"
-    className={cx('SimpleText', classes.root)}
     justify={getFlexPosition(alignment)[1]}
     align={getFlexPosition(alignment)[0]}
     style={{
@@ -38,10 +38,12 @@ export const SimpleText = ({
     }}
     {...rest}
   >
+    {slotBefore}
     <SectionTitle
       {...textBlock}
-      alignment={getFlexPosition(alignment)[0] as ITextBlock['alignment']}
+      alignment={alignment?.split('/')?.[0] as ITextBlock['alignment']}
     />
     {children}
+    {slotAfter}
   </StyledBox>
 );

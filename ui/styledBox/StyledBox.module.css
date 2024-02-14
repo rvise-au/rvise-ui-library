@@ -1,8 +1,13 @@
 .styled {
   position: relative;
-  background-color: var(--mantine-color-white);
-  padding: var(--c-py-base) var(--c-px-base);
+  display: flex;
+  align-self: stretch;
+}
 
+/* .decorated {
+  padding: var(--c-py-base) var(--c-px-base);
+  align-items: var(--align-items, center);
+  justify-content: var(--justify-content, flex-start);
   @media (min-width: $mantine-breakpoint-sm) {
     padding: var(--c-py-md) var(--c-px-md);
   }
@@ -11,3 +16,4 @@
     padding: var(--c-py-lg) var(--c-px-lg);
   }
 }
+ */

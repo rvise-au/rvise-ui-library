@@ -10,11 +10,16 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     'storybook-dark-mode',
     '@storybook/addon-styling-webpack',
+    '@storybook/addon-knobs',
   ],
   framework: {
     name: '@storybook/nextjs',
     options: {},
   },
+  typescript: {
+    reactDocgen: 'react-docgen', // or false if you don't need docgen at all
+  },
+  staticDirs: ['../public'],
   webpackFinal: async (config) => {
     config.resolve.alias = {
       ...config.resolve.alias,

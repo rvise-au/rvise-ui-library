@@ -1,6 +1,8 @@
+import { Box } from '@mantine/core';
 import cx from 'clsx';
+import { cloneElement, RefObject } from 'react';
 
-import { BackgroundProps } from '@/types';
+import { BackgroundProps, Paddings } from '@interface/index';
 
 import { Background } from '../../media/Background';
 import styles from './styles/section.module.css';
@@ -19,6 +21,21 @@ type SectionProps = {
   containerStyle?: React.CSSProperties;
   background?: BackgroundProps;
   marginBottom?: 'sm' | 'md' | 'lg' | 'xl';
+  hasDecoration?: boolean;
+  sectionRef?: ((instance: HTMLElement | null) => void) | RefObject<HTMLElement> | null | undefined;
+  containerRef?:
+    | ((instance: HTMLDivElement | null) => void)
+    | RefObject<HTMLDivElement>
+    | null
+    | undefined;
+  containerProps?: {
+    padding?: Paddings;
+    radius?: string;
+    shadow?: string;
+    hasDecoration?: boolean;
+  };
+  containerSlotBefore?: React.ReactNode;
+  containerSlotAfter?: React.ReactNode;
 };
 
 export const Section = ({
@@ -33,16 +50,28 @@ export const Section = ({
   containerClassName,
   containerSize = 'md',
   containerStyle = {},
+  containerProps = {},
   background,
   marginBottom,
+  hasDecoration,
+  sectionRef,
+  containerRef,
+  containerSlotBefore,
+  containerSlotAfter,
 }: SectionProps) => {
   const isOnSection = background?.placement === 'section';
   const isColor = background?.type === 'color';
+  const containerHasStyles =
+    Object.keys(containerProps).length > 0 ||
+    Object.keys(containerStyle).length > 0 ||
+    (!isOnSection && background && isColor && background?.color);
   return (
-    <section
+    <Box
+      component="section"
       id={id}
+      ref={sectionRef}
       className={cx('section', styles.root, className)}
-      data-decorated={!!background && isOnSection}
+      data-decorated={hasDecoration || (!!background && isOnSection)}
       style={{
         ...sectionStyle,
         backgroundColor: isOnSection && background && isColor && background?.color,
@@ -55,18 +84,28 @@ export const Section = ({
       {renderChildren ? (
         renderChildren()
       ) : (
-        <div
+        <Box
+          component="div"
+          ref={containerRef}
           className={cx(styles.container, containerClassName)}
           data-size={containerSize}
-          style={{
-            ...containerStyle,
-            backgroundColor: !isOnSection && background && isColor && background?.color,
-          }}
         >
-          {children}
-        </div>
+          {containerHasStyles
+            ? cloneElement(children as React.ReactElement, {
+                slotBefore: containerSlotBefore,
+                slotAfter: containerSlotAfter,
+                background: !isOnSection && background,
+                padding: containerProps?.padding,
+                radius: containerProps?.radius,
+                shadow: containerProps?.shadow,
+                hasDecoration: containerProps?.hasDecoration,
+                style: containerStyle,
+                'data-overflow': false,
+              })
+            : children}
+        </Box>
       )}
       {afterContent}
-    </section>
+    </Box>
   );
 };

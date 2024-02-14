@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 2,
             "patches": [
                 {
                     "date": 1705204780027,
@@ -12,6 +12,10 @@
                 {
                     "date": 1705204812443,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import { TbCookie, TbGauge, TbLock, TbUser } from 'react-icons/tb';\n \n+import { ButtonGroup } from '../../buttons/Group';\n+\n export const featuresMock = [\n   {\n     icon: TbGauge,\n     heading: {\n@@ -54,8 +56,23 @@\n     },\n   },\n ];\n \n+export const textBlockMock = {\n+  heading: {\n+    text: 'Data to enrich your online business',\n+    size: 'h1',\n+    order: 1,\n+  },\n+  subheading: {\n+    text: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.',\n+    size: 'lg',\n+  },\n+  children: <ButtonGroup />,\n+  width: 'sm',\n+};\n+\n+\n export const buttonsMock = [\n   {\n     label: 'Get Started',\n     href: '#',\n"
+                },
+                {
+                    "date": 1706695794552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -96,8 +96,9 @@\n   },\n };\n \n export const mediaOffsetBlockMock = {\n+  radius: '20px',\n   type: 'image',\n   imageProps: {\n     src: 'https://tailwindui.com/img/component-images/project-app-screenshot.png',\n     alt: 'Image alt text',\n"
                 }
             ],
             "date": 1705204780027,

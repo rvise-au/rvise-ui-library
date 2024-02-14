@@ -98,7 +98,13 @@ export const mediaBlockMock = {
 
 export const mediaOffsetBlockMock = {
   type: 'image',
+  mediaStyles: {
+    borderRadius: 20,
+    backgroundColor: '#f5f5f5',
+    padding: 20,
+  },
   imageProps: {
+    fill: true,
     src: 'https://tailwindui.com/img/component-images/project-app-screenshot.png',
     alt: 'Image alt text',
     quality: 85,

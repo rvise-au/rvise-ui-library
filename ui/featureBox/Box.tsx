@@ -1,4 +1,5 @@
 import {
+  Button,
   ButtonVariant,
   Card,
   MantineRadius,
@@ -9,6 +10,7 @@ import {
 } from '@mantine/core';
 import cx from 'clsx';
 import Link, { LinkProps as NextLinkProps } from 'next/link';
+import { TbArrowRight } from 'react-icons/tb';
 
 import { TextObject } from '@/types';
 
@@ -113,9 +115,16 @@ export const FeatureBox = ({
         </Text>
       )}
       {linkProps?.href && (
-        <Link {...linkProps}>
-          <a className={styles.link}>Learn more</a>
-        </Link>
+        <Button
+          //@ts-ignore
+          component={linkProps?.href ? Link : 'button'}
+          className={styles.link}
+          p={linkProps?.href && 0}
+          {...linkProps}
+          rightSection={<TbArrowRight strokeWidth="3px" />}
+        >
+          <span className={styles.link}>Learn more</span>
+        </Button>
       )}
     </dd>
   </Card>

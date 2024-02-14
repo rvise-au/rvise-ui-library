@@ -3,6 +3,10 @@
   grid-template-columns: repeat(12, minmax(0, 1fr));
   column-gap: 2rem;
 }
+.leftColumn,
+.rightColumn {
+  z-index: 3;
+}
 
 .col_1 {
   grid-column: span 1 / span 1;

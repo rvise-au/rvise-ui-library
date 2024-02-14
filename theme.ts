@@ -29,6 +29,18 @@ export const theme = createTheme({
       '#1c1c1c',
       '#000000',
     ],
+    brand: [
+      '#f2f2f2',
+      '#e5e5e5',
+      '#cccccc',
+      '#b2b2b2',
+      '#848484',
+      '#717171',
+      '#656565',
+      '#575757',
+      '#1c1c1c',
+      '#000000',
+    ],
   },
   headings: {
     fontFamily: 'Inter, sans-serif',
@@ -40,6 +52,28 @@ export const theme = createTheme({
       },
       h2: {
         fontSize: '48px',
+        fontWeight: '700',
+        lineHeight: '100%',
+      },
+      h3: {
+        fontSize: '36px',
+        fontWeight: '700',
+        lineHeight: '100%',
+      },
+      h4: {
+        fontSize: '24px',
+        fontWeight: '700',
+        lineHeight: '100%',
+      },
+      h5: {
+        fontSize: '20px',
+        fontWeight: '700',
+        lineHeight: '100%',
+      },
+      h6: {
+        fontSize: '16px',
+        fontWeight: '700',
+        lineHeight: '100%',
       },
     },
   },
