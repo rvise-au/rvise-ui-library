@@ -1,5 +1,6 @@
 import { StatsProps } from '~/shared/types';
 import { getSuffixNumber } from '~/utils/utils';
+
 import WidgetWrapper from '../common/WidgetWrapper';
 
 const Stats = ({ items, id, hasBackground = false }: StatsProps) => (
