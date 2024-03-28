@@ -1,12 +1,11 @@
 import { cva } from 'class-variance-authority';
 import { isValidElement, ReactNode } from 'react';
 import Link from 'next/link';
-import { Button } from '@/ui/shared/buttons/Button';
 import { cn } from '@/src/utils/classname';
 import { StyledBox } from '@/ui/shared/styledBox';
 import { LinkType, StyledBoxInterface } from '@/ui/types';
 
-interface FeatureBoxProps
+interface StatBoxProps
   extends Omit<
     StyledBoxInterface,
     'component' | 'isLead' | 'minHeight' | 'hasDecoration' | 'paddingDirection' | 'justify'
@@ -24,6 +23,12 @@ interface FeatureBoxProps
   title: string;
   description: string | ReactNode;
   link?: LinkType;
+  number: {
+    size?: 'sm' | 'md' | 'lg' | 'xl';
+    color?: string;
+    text: string | number;
+    unit?: string;
+  };
 }
 
 const boxVariants = cva('max-w-md sm:mx-auto gap-6 border-[var(--border-color)]', {
@@ -38,13 +43,14 @@ const boxVariants = cva('max-w-md sm:mx-auto gap-6 border-[var(--border-color)]'
       link: 'text-primary underline-offset-4 hover:underline',
     },
     textAlign: {
-      start: 'text-left',
-      center: 'text-center',
+      start: 'text-left [&_.info]:items-start',
+      center: 'text-center [&_.info]:items-center',
       default: 'text-left',
     },
   },
   defaultVariants: {
     layout: 'stacked',
+    //@ts-ignore
     align: 'start',
     textAlign: 'default',
   },
@@ -97,31 +103,39 @@ const iconVariants = cva('flex items-center justify-center', {
   },
 });
 
-export const FeatureBox = ({
-  iconProps,
+export const StatBox = ({
+  //@ts-ignore
+  iconProps: { icon, shape, size, shadow, bgColor, color } = {},
   layout = 'stacked',
   align = 'center',
-  shadow,
+  shadow: boxShadow,
   radius,
   padding,
   border,
   background,
   borderColor,
+  //@ts-ignore
+  number: { text, unit } = {},
   title,
   description,
   link,
-}: FeatureBoxProps) => {
+}: StatBoxProps) => {
   // FeatureBox is a component that is used to display a feature in a card-like format.
+
+  const renderElementOrText = (element: string | ReactNode) => {
+    return isValidElement(element) ? element : <span className="mb-3 text-sm text-gray-900">{element}</span>;
+  };
 
   return (
     <StyledBox
       className={cn(
         boxVariants({
           layout: layout,
+          //@ts-ignore
           textAlign: layout === 'stacked' ? align : 'start',
         }),
       )}
-      shadow={shadow}
+      shadow={boxShadow}
       padding={padding}
       paddingDirection={padding ? 'xy' : undefined}
       radius={radius}
@@ -129,39 +143,40 @@ export const FeatureBox = ({
       align={align}
       background={background}
       style={{
+        //@ts-ignore
         '--border-color': borderColor,
       }}
     >
-      {iconProps?.icon && (
+      {icon && (
         <span
           className={cn(
             'flex items-center justify-center ',
             iconVariants({
-              shape: iconProps.shape,
-              size: iconProps.size,
-              shadow: iconProps.shadow,
-              hasBg: Boolean(iconProps.bgColor),
+              shape: shape,
+              size: size,
+              //@ts-ignore
+              shadow: shadow,
+              hasBg: Boolean(bgColor),
             }),
           )}
           style={{
-            '--bg-color': iconProps.bgColor,
-            color: iconProps.color,
+            //@ts-ignore
+            '--bg-color': bgColor,
+            color: color,
           }}
         >
-          {iconProps?.icon}
+          {icon}
         </span>
       )}
-      <div className="flex flex-col">
-        {isValidElement(title) ? (
-          title
-        ) : title ? (
-          <span className="mb-2 text-xl font-bold leading-normal">{title}</span>
-        ) : null}
-        {isValidElement(description) ? (
-          description
-        ) : description ? (
-          <span className="mb-3 text-sm text-gray-900">{description}</span>
-        ) : null}
+      <div className="info flex flex-col">
+        {text && (
+          <span className="text-4xl font-bold">
+            {text}
+            {unit}
+          </span>
+        )}
+        {renderElementOrText(title)}
+        {renderElementOrText(description)}
         {link?.href && (
           <Link {...link} className="text-link">
             {link?.title}
@@ -172,4 +187,4 @@ export const FeatureBox = ({
   );
 };
 
-FeatureBox.displayName = 'FeatureBox';
+StatBox.displayName = 'StatBox';

@@ -75,8 +75,8 @@ export interface StyledBoxInterface {
   minHeight?: ResponsiveStringValues;
 }
 
-export type Link = {
+export type LinkType = {
   href: string;
-  label: string;
+  title: string;
   newTab?: boolean;
 };
