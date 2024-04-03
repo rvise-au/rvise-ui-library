@@ -26,9 +26,9 @@ import {
   testimonialsHome,
 } from '~/shared/data/pages/home.data';
 
-import { ButtonGroup } from '@/ui/shared/buttons/Group';
-import { Headline } from '@/ui/shared/headline';
-import { Media } from '@/ui/shared/media/Media';
+import { ButtonGroup } from '@/ui/components/buttons/Group';
+import { Headline } from '@/ui/components/headline';
+import { Media } from '@/ui/components/media/Media';
 import { SectionWrapper } from '@/ui/shared/SectionWrapper';
 import { Split } from '@/ui/shared/Split';
 import { StyledBox } from '@/ui/shared/styledBox';

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { cn } from '@/src/utils/classname';
-import { Button } from '@/ui/shared/buttons/Button';
+import { Button } from '@/ui/components/buttons/Button';
 
 type ButtonGroupProps = {
   buttons: any[];

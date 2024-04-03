@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { TbPlayerPlay } from 'react-icons/tb';
 import ReactPlayer from 'react-player/lazy';
 
-import { Button } from '@/ui/shared/buttons/Button';
+import { Button } from '@/ui/components/buttons/Button';
 
 import { Image } from './Image';
 

@@ -4,7 +4,7 @@ import cx from 'clsx';
 
 import { IMediaBlock } from '@/ui/types';
 
-import { StyledBox } from '../styledBox';
+import { StyledBox } from '../../shared/styledBox';
 import { Image } from './Image';
 import { Video } from './Video';
 

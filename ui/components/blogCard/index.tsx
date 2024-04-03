@@ -2,11 +2,10 @@ import { cva } from 'class-variance-authority';
 import { format } from 'date-fns';
 import { isValidElement, ReactNode } from 'react';
 
-import { cn } from '@/src/utils/classname';
-import { Badge } from '@/ui/shared/badge';
-import { createElement } from '@/ui/shared/headline';
-import { Media } from '@/ui/shared/media/Media';
-import { StyledBox } from '@/ui/shared/styledBox';
+import { Badge } from '@/ui/components/badge';
+import { Card } from '@/ui/components/card';
+import { createElement } from '@/ui/components/headline';
+import { Media } from '@/ui/components/media/Media';
 import { IMediaBlock, LinkType, StyledBoxInterface } from '@/ui/types';
 
 interface BlogCardProps
@@ -78,21 +77,9 @@ export const BlogCard = ({
   // FeatureBox is a component that is used to display a feature in a card-like format.
   const hasMeta = date || tags?.length;
   return (
-    <StyledBox
-      className={cn(
-        boxVariants({
-          variant: variant,
-          textAlign: align,
-        }),
-      )}
+    <Card
       shadow={shadow}
-      padding={
-        variant !== 'offset'
-          ? {
-              base: 6,
-            }
-          : undefined
-      }
+      padding={padding || { base: 6 }}
       paddingDirection={padding ? 'xy' : undefined}
       radius={radius}
       border={borderColor ? border : undefined}
@@ -117,7 +104,7 @@ export const BlogCard = ({
       {title && <>{createElement(title, 'h3', 'mt-1')}</>}
       {excerpt ? (isValidElement(excerpt) ? excerpt : createElement(excerpt, 'p', 'mt-3')) : null}
       {slotAfter}
-    </StyledBox>
+    </Card>
   );
 };
 

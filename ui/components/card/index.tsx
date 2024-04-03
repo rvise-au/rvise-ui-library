@@ -1,15 +1,40 @@
 import * as React from 'react';
 
 import { cn } from '@/src/utils/classname';
+import { Background } from '@/ui/components/media/Background';
+import { StyledBoxInterface } from '@/ui/types';
+import { borderVariants, getPaddingVariants, radiusVariants, shadowVariants } from '@/utils/get-classes';
 
-const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn('rounded-lg border bg-card text-card-foreground shadow-sm', className)} {...props} />
-));
+interface CardProps extends StyledBoxInterface {}
+
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, children, background, border, shadow, radius, padding, ...rest }: CardProps, ref) => (
+    <div
+      ref={ref}
+      className={cn(
+        'rounded-lg border bg-card text-card-foreground shadow-sm',
+        shadow && shadowVariants({ shadow }),
+        radius && radiusVariants({ radius }),
+        border && borderVariants({ border }),
+        padding && getPaddingVariants(padding, 'xy'),
+        className,
+      )}
+      {...rest}
+    >
+      {children}
+      {background && <Background {...background} color={background?.color || ''} />}
+    </div>
+  ),
+);
 Card.displayName = 'Card';
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn('flex flex-col space-y-1.5 p-6', className)} {...props} />
+  ({ className, padding, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn('flex flex-col space-y-1.5', padding && getPaddingVariants(padding, 'xy'), className)}
+      {...props}
+    />
   ),
 );
 CardHeader.displayName = 'CardHeader';
@@ -29,7 +54,9 @@ const CardDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
 CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => <div ref={ref} className={cn('p-6 pt-0', className)} {...props} />,
+  ({ className, padding, ...props }, ref) => (
+    <div ref={ref} className={cn('p-6 pt-0', padding && getPaddingVariants(padding, 'xy'), className)} {...props} />
+  ),
 );
 CardContent.displayName = 'CardContent';
 

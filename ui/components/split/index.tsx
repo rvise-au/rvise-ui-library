@@ -65,3 +65,5 @@ export const Split = ({ left, right, columns = [6, 6], className, style, ...rest
     </StyledBox>
   );
 };
+
+Split.displayName = 'Split';

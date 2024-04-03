@@ -5,7 +5,7 @@ import { isValidElement, ReactElement, ReactNode } from 'react';
 import { cn } from '@/src/utils/classname';
 import { ITextBlock } from '@/types';
 
-import { StyledBox } from '../styledBox';
+import { StyledBox } from '../../shared/styledBox';
 
 const labelClasses =
   'group inline-block bg-white/[.05] hover:bg-white/[.1] border border-white/[.05] p-1 px-4 rounded-full shadow-md focus:outline-none focus:ring-1 focus:ring-gray-600';
