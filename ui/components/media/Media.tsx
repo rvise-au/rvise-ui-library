@@ -2,30 +2,15 @@
 
 import cx from 'clsx';
 
+import { Paper } from '@/ui/components/paper';
 import { IMediaBlock } from '@/ui/types';
 
-import { StyledBox } from '../../shared/styledBox';
 import { Image } from './Image';
 import { Video } from './Video';
 
-export const Media = ({
-  className,
-  mediaStyles,
-  imageProps,
-  videoProps,
-  type,
-  radius,
-  shadow,
-  border,
-  fade,
-}: IMediaBlock) => {
+export const Media = ({ className, mediaStyles, imageProps, videoProps, type, fade, ...rest }: IMediaBlock) => {
   return (
-    <StyledBox
-      className={cx('mediaBox w-full overflow-hidden', className)}
-      radius={radius}
-      shadow={shadow}
-      border={border}
-    >
+    <Paper className={cx('mediaBox w-full overflow-hidden', className)} {...rest}>
       {type === 'image' && <Image {...imageProps} />}
       {type === 'video' && <Video {...videoProps} />}
       {fade && (
@@ -37,7 +22,7 @@ export const Media = ({
           }}
         ></div>
       )}
-    </StyledBox>
+    </Paper>
   );
 };
 

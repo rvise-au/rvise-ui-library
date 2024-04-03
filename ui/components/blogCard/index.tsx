@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { isValidElement, ReactNode } from 'react';
 
 import { Badge } from '@/ui/components/badge';
-import { Card } from '@/ui/components/card';
+import { Card, CardContent } from '@/ui/components/card';
 import { createElement } from '@/ui/components/headline';
 import { Media } from '@/ui/components/media/Media';
 import { IMediaBlock, LinkType, StyledBoxInterface } from '@/ui/types';
@@ -14,13 +14,15 @@ interface BlogCardProps
     'component' | 'isLead' | 'minHeight' | 'hasDecoration' | 'paddingDirection' | 'justify' | 'padding'
   > {
   borderColor?: string;
-  variant: 'default' | 'overlay' | 'simpleStack' | 'inline';
+  layout: 'default' | 'inline';
   quote: string | ReactNode;
   link?: LinkType;
   author?: string;
   slotBefore?: ReactNode;
   slotAfter?: ReactNode;
   media?: IMediaBlock;
+  hideMedia?: boolean;
+  overlayMedia?: boolean;
 }
 
 export const boxVariants = cva('max-w-xl sm:mx-auto border-[var(--border-color)] relative', {
@@ -91,18 +93,20 @@ export const BlogCard = ({
     >
       {slotBefore}
       <Media {...media} />
-      {hasMeta && <div className="meta">{date && <span>{format(date, 'MMM dd yyyy')}</span>}</div>}
-      {tags?.length && (
-        <div className="tags flex flex-cols gap-2">
-          {tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      )}
-      {title && <>{createElement(title, 'h3', 'mt-1')}</>}
-      {excerpt ? (isValidElement(excerpt) ? excerpt : createElement(excerpt, 'p', 'mt-3')) : null}
+      <CardContent>
+        {hasMeta && <div className="meta">{date && <span>{format(date, 'MMM dd yyyy')}</span>}</div>}
+        {tags?.length && (
+          <div className="tags flex flex-cols gap-2">
+            {tags.map((tag) => (
+              <Badge key={tag} variant="secondary">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+        {title && <>{createElement(title, 'h3', 'mt-1')}</>}
+        {excerpt ? (isValidElement(excerpt) ? excerpt : createElement(excerpt, 'p', 'mt-3')) : null}
+      </CardContent>
       {slotAfter}
     </Card>
   );
