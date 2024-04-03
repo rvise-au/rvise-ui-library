@@ -1,12 +1,23 @@
-import React from 'react';
-import type { Preview, ReactRenderer } from '@storybook/react';
+import '~/assets/styles/base.css';
+
+import { Inter as CustomFont } from 'next/font/google';
+import { getImageProps, ImageProps } from 'next/image';
+
 import { withThemeByClassName } from '@storybook/addon-themes';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-import { Inter as CustomFont } from 'next/font/google';
-import '~/assets/styles/base.css';
+import type { Preview, ReactRenderer } from '@storybook/react';
+type SourceProps = Omit<JSX.IntrinsicElements['source'], 'srcSet' | 'src'> &
+  Pick<ImageProps, 'src' | 'loader' | 'unoptimized' | 'quality'>;
 
 const customFont = CustomFont({ subsets: ['latin'], variable: '--font-custom' });
+
+Object.defineProperty(getImageProps, 'default', {
+  configurable: true,
+  value: (props) => {
+    console.log(props);
+  },
+});
 
 const CUSTOM_VIEWPORTS = {
   SMALL: {

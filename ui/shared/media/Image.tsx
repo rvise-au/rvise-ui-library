@@ -20,6 +20,8 @@ export const Image = ({
   ...rest
 }) => {
   const defaultSource = src || mobileSrc || desktopSrc;
+
+  console.log(defaultSource, '___defaultSource');
   if (!defaultSource) return null;
 
   const baseAspect = aspectRatio?.base || aspectRatio?.sm;
@@ -52,3 +54,5 @@ export const Image = ({
     </picture>
   );
 };
+
+Image.displayName = 'rvise_Image';

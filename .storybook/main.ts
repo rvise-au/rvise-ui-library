@@ -13,7 +13,12 @@ module.exports = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      image: {
+        loading: 'eager',
+      },
+      nextConfigPath: path.resolve(__dirname, '../next.config.js'),
+    },
   },
   docs: {
     autodocs: 'tag',

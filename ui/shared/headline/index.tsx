@@ -18,7 +18,8 @@ interface ElementProps {
   order?: number;
   [key: string]: any;
 }
-const createElement = (
+
+export const createElement = (
   element: ElementProps | ReactElement | any,
   defaultSize: string,
   classNames?: string,

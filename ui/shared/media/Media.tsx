@@ -2,7 +2,7 @@
 
 import cx from 'clsx';
 
-import { IMediaBlock } from '@/types';
+import { IMediaBlock } from '@/ui/types';
 
 import { StyledBox } from '../styledBox';
 import { Image } from './Image';

@@ -75,6 +75,21 @@ export interface StyledBoxInterface {
   minHeight?: ResponsiveStringValues;
 }
 
+export interface IMediaBlock {
+  className?: string;
+  imageProps?: ImageProps;
+  videoProps?: VideoProps;
+  type?: 'image' | 'video';
+  radius?: string;
+  fade?: boolean;
+  aspectRatio?: {
+    base: string;
+    sm: string;
+    md: string;
+    lg: string;
+  };
+}
+
 export type LinkType = {
   href: string;
   title: string;

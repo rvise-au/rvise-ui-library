@@ -3,10 +3,8 @@ const SITE = require('./src/config.js').SITE;
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-
   trailingSlash: SITE.trailingSlash,
   basePath: SITE.basePathname !== '/' ? SITE.basePathname : '',
-
   swcMinify: true,
   poweredByHeader: false,
   typescript: {
@@ -18,15 +16,13 @@ module.exports = {
     ignoreDuringBuilds: true,
   },
   images: {
+    domains: ['cdn.sanity.io', 'images.unsplash.com', 'loremflickr.com', 'static.vecteezy.com'],
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-      },
+      { hostname: 'cdn.sanity.io' },
+      { hostname: 'images.unsplash.com' },
+      { hostname: 'loremflickr.com' },
+      { hostname: 'static.vecteezy.com' },
     ],
   },
 };

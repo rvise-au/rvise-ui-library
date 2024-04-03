@@ -92,7 +92,7 @@ export const StyledBox = forwardRef(
       <div
         ref={ref}
         className={cn(
-          'styleBox min-h-[var(--min-height-base)]',
+          `styleBox ${minHeight?.base ? 'min-h-[var(--min-height-base)]' : ''}`,
           boxVariants({
             align,
             justify,
