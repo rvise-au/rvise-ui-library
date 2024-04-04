@@ -22,7 +22,7 @@ interface ElementProps {
 export const createElement = (
   element: ElementProps | ReactElement | any,
   defaultSize: string,
-  classNames?: string,
+  defaultClassName?: string,
 ): ReactNode => {
   if (!element) return null;
 
@@ -66,7 +66,7 @@ export const createElement = (
     }
   };
 
-  const { text, size = defaultSize, tag = 'span', color, weight, order, ...rest } = element;
+  const { text, size = defaultSize, tag = 'span', color, weight, order, className, ...rest } = element;
 
   if (!text) return null;
   const Component = tag;
@@ -75,11 +75,12 @@ export const createElement = (
     <Component
       className={cx(
         `${color ? 'text-[var(--color)]' : ''}`,
-        cn(`${getSizeClass(size)} ${getTextWeight(weight)}`, classNames),
+        cn(`${getSizeClass(size)} ${getTextWeight(weight)}`, className, defaultClassName),
       )}
       style={{
         '--color': color,
       }}
+      {...rest}
     >
       {text}
     </Component>

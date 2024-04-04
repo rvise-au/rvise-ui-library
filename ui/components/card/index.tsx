@@ -18,8 +18,8 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
     <div
       ref={ref}
       className={cn(
-        'text-card-foreground flex gap-4',
-        flexDirectionVariants({ layout }),
+        'relative text-card-foreground flex gap-5',
+        flexDirectionVariants({ direction: layout }),
         shadow && shadowVariants({ shadow }),
         radius && radiusVariants({ radius }),
         border && borderVariants({ border }),

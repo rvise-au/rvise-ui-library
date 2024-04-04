@@ -8,7 +8,7 @@ import { IMediaBlock } from '@/ui/types';
 import { Image } from './Image';
 import { Video } from './Video';
 
-export const Media = ({ className, mediaStyles, imageProps, videoProps, type, fade, ...rest }: IMediaBlock) => {
+export const Media = ({ className, imageProps, videoProps, type, fade, ...rest }: IMediaBlock) => {
   return (
     <Paper className={cx('mediaBox w-full overflow-hidden', className)} {...rest}>
       {type === 'image' && <Image {...imageProps} />}

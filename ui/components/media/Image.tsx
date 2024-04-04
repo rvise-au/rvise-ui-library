@@ -20,15 +20,14 @@ export const Image = ({
   ...rest
 }) => {
   const defaultSource = src || mobileSrc || desktopSrc;
-
-  console.log(defaultSource, '___defaultSource');
   if (!defaultSource) return null;
-
   const baseAspect = aspectRatio?.base || aspectRatio?.sm;
+  const fullHeght = baseAspect === 'auto' ? 'h-full' : '';
   return (
     <picture
       className={cn(
         'image',
+        fullHeght,
         `w-full overflow-hidden relative aspect-[var(--base-aspect)]`,
         aspectRatio?.sm ? `sm:aspect-[var(--sm-aspect)]` : ``,
         aspectRatio?.md ? `md:aspect-[var(--md-aspect)]` : ``,
