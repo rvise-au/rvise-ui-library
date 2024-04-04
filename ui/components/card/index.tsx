@@ -3,16 +3,23 @@ import * as React from 'react';
 import { cn } from '@/src/utils/classname';
 import { Background } from '@/ui/components/media/Background';
 import { StyledBoxInterface } from '@/ui/types';
-import { borderVariants, getPaddingVariants, radiusVariants, shadowVariants } from '@/utils/get-classes';
+import {
+  borderVariants,
+  getPaddingVariants,
+  radiusVariants,
+  shadowVariants,
+  flexDirectionVariants,
+} from '@/utils/get-classes';
 
 interface CardProps extends StyledBoxInterface {}
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
-  ({ className, children, background, border, shadow, radius, padding, ...rest }: CardProps, ref) => (
+  ({ className, children, background, border, shadow, radius, padding, layout = 'col', ...rest }: CardProps, ref) => (
     <div
       ref={ref}
       className={cn(
-        'rounded-lg border bg-card text-card-foreground shadow-sm',
+        'text-card-foreground flex gap-4',
+        flexDirectionVariants({ layout }),
         shadow && shadowVariants({ shadow }),
         radius && radiusVariants({ radius }),
         border && borderVariants({ border }),
@@ -55,7 +62,11 @@ CardDescription.displayName = 'CardDescription';
 
 const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, padding, ...props }, ref) => (
-    <div ref={ref} className={cn('p-6 pt-0', padding && getPaddingVariants(padding, 'xy'), className)} {...props} />
+    <div
+      ref={ref}
+      className={cn('flex flex-col', padding ? getPaddingVariants(padding, 'xy') : '', className)}
+      {...props}
+    />
   ),
 );
 CardContent.displayName = 'CardContent';

@@ -1,5 +1,17 @@
 import { cva } from 'class-variance-authority';
 
+export const flexDirectionVariants = cva('', {
+  variants: {
+    direction: {
+      col: 'flex-col',
+      row: 'flex-row',
+    },
+  },
+  defaultVariants: {
+    direction: 'col',
+  },
+});
+
 export const shadowVariants = cva('', {
   variants: {
     shadow: {

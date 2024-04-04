@@ -46,7 +46,6 @@
     "@storybook/nextjs": "latest",
     "@storybook/react": "latest",
     "@storybook/test": "latest",
-    "@storyofams/storyblok-toolkit": "^1.6.9",
     "@tailwindcss/typography": "^0.5.10",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "20.11.5",

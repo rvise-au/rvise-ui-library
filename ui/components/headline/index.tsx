@@ -5,7 +5,7 @@ import { isValidElement, ReactElement, ReactNode } from 'react';
 import { cn } from '@/src/utils/classname';
 import { ITextBlock } from '@/types';
 
-import { StyledBox } from '../../shared/styledBox';
+import { Paper } from '@/ui/components/paper';
 
 const labelClasses =
   'group inline-block bg-white/[.05] hover:bg-white/[.1] border border-white/[.05] p-1 px-4 rounded-full shadow-md focus:outline-none focus:ring-1 focus:ring-gray-600';
@@ -150,45 +150,39 @@ export const Headline = ({
   }
 
   return (
-    <StyledBox
+    <Paper
       {...animationProps?.props}
       align={align}
       justify={justify}
-      className={cn('title', classNames?.root)}
+      className={cn(
+        'title',
+        headingVariants({
+          direction,
+        }),
+        classNames?.root,
+      )}
       {...rest}
     >
+      {slotBefore && <div className={cx('slotBefore', classNames?.slotBefore)}>{slotBefore}</div>}
       <div
         className={cn(
-          'title',
-          headingVariants({
-            direction,
-            align,
-            justify,
-          }),
-          classNames?.inner,
+          'relative flex gap-5 flex-col',
+          direction !== 'inline'
+            ? headingVariants({
+                direction,
+                align,
+                justify,
+              })
+            : 'items-start',
         )}
       >
-        {slotBefore && <div className={cx('slotBefore', classNames?.slotBefore)}>{slotBefore}</div>}
-        <div
-          className={cn(
-            'relative flex gap-5 flex-col',
-            direction !== 'inline'
-              ? headingVariants({
-                  direction,
-                  align,
-                  justify,
-                })
-              : 'items-start',
-          )}
-        >
-          {_labelElement}
-          {_headingElement}
-          {_textElement}
-          {children}
-        </div>
-        {slotAfter && <div className={cx('slotAfter', classNames?.slotAfter)}>{slotAfter}</div>}
+        {_labelElement}
+        {_headingElement}
+        {_textElement}
+        {children}
       </div>
-    </StyledBox>
+      {slotAfter && <div className={cx('slotAfter', classNames?.slotAfter)}>{slotAfter}</div>}
+    </Paper>
   );
 };
 
