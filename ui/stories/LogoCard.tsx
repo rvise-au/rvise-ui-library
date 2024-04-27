@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tb24Hours } from 'react-icons/tb';
 
-import { FeatureBox } from '../components/featureBox';
+import { LogoCard } from '../components/logoCard';
 
 const SvgIcon = () => (
   <svg className="text-deep-purple-accent-400" stroke="currentColor" viewBox="0 0 52 52">
@@ -17,8 +16,8 @@ const SvgIcon = () => (
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Components/FeatureBox',
-  component: FeatureBox,
+  title: 'Components/LogoCard',
+  component: LogoCard,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
@@ -27,7 +26,7 @@ const meta = {
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {},
-} satisfies Meta<typeof FeatureBox>;
+} satisfies Meta<typeof LogoCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -35,17 +34,18 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Base: Story = {
   args: {
-    iconProps: {
-      icon: <Tb24Hours />,
-      shape: 'circle',
-      size: 'sm',
-      color: 'green',
-    },
-    title: '24/7 Support',
-    description: 'We are here to help you 24 hours a day, 7 days a week.',
-    link: {
-      href: '/support',
-      title: 'Learn more',
-    },
+    layout: 'row',
+    name: 'Lindsay Walton',
+    variant: 'default',
+    position: 'Front-end Developer',
+    image:
+      'https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?q=80&w=2519&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+  },
+};
+
+export const BaseWithCompany: Story = {
+  args: {
+    image:
+      'https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?q=80&w=2519&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 };

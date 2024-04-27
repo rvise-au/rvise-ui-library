@@ -1,8 +1,9 @@
 import { cva } from 'class-variance-authority';
-import { isValidElement, ReactNode } from 'react';
 import Link from 'next/link';
+import { isValidElement, ReactNode } from 'react';
+
 import { cn } from '@/src/utils/classname';
-import { StyledBox } from '@/ui/shared/styledBox';
+import { Card } from '@/ui/components/card';
 import { LinkType, StyledBoxInterface } from '@/ui/types';
 
 interface StatBoxProps
@@ -127,7 +128,7 @@ export const StatBox = ({
   };
 
   return (
-    <StyledBox
+    <Card
       className={cn(
         boxVariants({
           layout: layout,
@@ -183,7 +184,7 @@ export const StatBox = ({
           </Link>
         )}
       </div>
-    </StyledBox>
+    </Card>
   );
 };
 

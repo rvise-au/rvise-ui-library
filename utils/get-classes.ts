@@ -5,6 +5,8 @@ export const flexDirectionVariants = cva('', {
     direction: {
       col: 'flex-col',
       row: 'flex-row',
+      inline: 'flex-row',
+      stacked: 'flex-col',
     },
   },
   defaultVariants: {
@@ -32,6 +34,10 @@ export const shadowVariants = cva('', {
 
 export const flexAlignmentVariants = cva('', {
   variants: {
+    alignment: {
+      start: 'text-left',
+      center: 'text-center',
+    },
     align: {
       default: 'items-start',
       start: 'items-start',
@@ -54,6 +60,7 @@ export const flexAlignmentVariants = cva('', {
   defaultVariants: {
     align: 'default',
     justify: 'default',
+    alignment: 'start',
   },
 });
 

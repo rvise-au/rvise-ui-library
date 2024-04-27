@@ -71,8 +71,9 @@ export interface StyledBoxInterface {
   align?: Alignment;
   justify?: Alignment;
   isLead?: boolean;
-  className?: string | string[] | undefined;
+  className?: string | undefined;
   minHeight?: ResponsiveStringValues;
+  borderColor?: string;
 }
 
 export interface IMediaBlock {
@@ -95,3 +96,18 @@ export type LinkType = {
   title: string;
   newTab?: boolean;
 };
+
+export type AuthorProps = {
+  variant?: 'textOnly' | 'imageOnly' | 'default';
+  align?: 'start' | 'center';
+  layout?: 'row' | 'col';
+  image?: string;
+  name?: string;
+  position?: string;
+  size?: 'sm' | 'md' | 'lg';
+  company?: string;
+  socialHandle?: string;
+  className?: string;
+};
+
+export type SectionProps = {};

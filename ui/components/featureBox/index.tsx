@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { isValidElement, ReactNode } from 'react';
 
 import { cn } from '@/src/utils/classname';
-import { StyledBox } from '@/ui/shared/styledBox';
+import { Paper } from '@/ui/components/paper';
 import { LinkType, StyledBoxInterface } from '@/ui/types';
 
 interface FeatureBoxProps
@@ -114,7 +114,7 @@ export const FeatureBox = ({
   // FeatureBox is a component that is used to display a feature in a card-like format.
 
   return (
-    <StyledBox
+    <Paper
       className={cn(
         boxVariants({
           layout: layout,
@@ -168,7 +168,7 @@ export const FeatureBox = ({
           </Link>
         )}
       </div>
-    </StyledBox>
+    </Paper>
   );
 };
 

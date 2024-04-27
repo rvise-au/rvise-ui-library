@@ -1,7 +1,20 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Author } from '../components/author';
 import { BlogCard } from '../components/blogCard';
 import { mediaDataImage } from '../global.data';
 
+const AuthorElement = (
+  <>
+    <span className="divider" />
+    <Author
+      layout="row"
+      name="Lindsay Walton"
+      variant="default"
+      position="Front-end Developer"
+      image="https://images.unsplash.com/photo-1504904488824-dbeda3cb530b?q=80&w=2519&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    />
+  </>
+);
 const demoMediaImage = mediaDataImage;
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -46,6 +59,7 @@ export const Base: Story = {
       text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus in ante.',
       size: 'sm',
     },
+    slotAfter: AuthorElement,
   },
 };
 

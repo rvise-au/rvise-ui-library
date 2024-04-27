@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { cn } from '@/src/utils/classname';
-import { StyledBox } from '@/ui/shared/styledBox';
+import { Paper } from '@/ui/components/paper';
 import { LinkType, StyledBoxInterface } from '@/ui/types';
 
 import { IconInset, IconQuote } from './IconQuote';
@@ -81,7 +81,7 @@ export const TestimonialBox = ({
     </span>
   );
   return (
-    <StyledBox
+    <Paper
       className={cn(
         boxVariants({
           variant: variant,
@@ -115,7 +115,7 @@ export const TestimonialBox = ({
         {slotAfter}
       </blockquote>
       {name || avatar ? <span>Author</span> : null}
-    </StyledBox>
+    </Paper>
   );
 };
 
